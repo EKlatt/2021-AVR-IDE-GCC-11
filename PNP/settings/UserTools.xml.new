@@ -1,0 +1,49 @@
+<schemetools>
+<global>
+<tool 
+command="$(PNPath)..\toolchain\bin\make.exe" 
+flags="41" 
+folder="%d" 
+index="0" 
+name="[MyIDE] make all" 
+params="PNP=$(PNPath) --debug all" 
+parsepattern="" shortcut="116">
+</tool>
+<tool 
+command="$(PNPath)..\toolchain\bin\make.exe" 
+flags="41" 
+folder="%d" 
+index="0" 
+name="[MyIDE] make program" 
+params="PNP=$(PNPath) program" 
+parsepattern="" shortcut="117">
+</tool>
+<tool 
+command="$(PNPath)..\toolchain\bin\make.exe" 
+flags="41" 
+folder="%d" 
+index="0" 
+name="[MyIDE] make clean" 
+params="PNP=$(PNPath) clean" 
+parsepattern="" shortcut="118">
+</tool>
+<tool 
+command="$(PNPath)..\utils\ls.exe" 
+flags="41" 
+folder="%d" 
+index="0" 
+name="[MyIDE] ls" 
+params="*.*"
+parsepattern="" shortcut="119">
+</tool>
+<tool 
+command="$(PNPath)..\utils\cp.exe" 
+flags="41" 
+folder="%d" 
+index="0" 
+name="[MyIDE] get makefile" 
+params="$(PNPath)../makefile/makefile.master ./makefile" 
+parsepattern="" shortcut="120">
+</tool>
+</global>
+</schemetools>
