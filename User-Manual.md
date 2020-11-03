@@ -29,9 +29,10 @@ AVRDUDE	|	6.3
 Make	|	4.2.1<br>
 
 I called the above tools "toolchain" located in folder "toolchain".<br>
-The advantage of "Zak Kemble" edition is the presence of all<br>
+The advantage of "Zak Kemble's" edition is the presence of all<br>
 needed tools like AVRDUDE and Make.exe.<br>
-**Programmer's Notepad 2**
+**Programmer's Notepad 2**<br>
+
 As Editor I choosed portable Programmer's Notepad:<br>
 I made some additions in UserTools.xml<br>
 These additions will be found in the Tools-Menue:<br>
@@ -42,6 +43,11 @@ flash choose	|	[MyIDE] make program F6.<br>
 clean	|	[MyIDE] make clean F7.<br>
 listing	|	[MyIDE] ls F8.<br>
 
-sdfsdf
+The folders and files of Progammer's Notepad are located in folder "PNP".<br>
+1. In MyIDE-download within folder ../PNP/settings" you will find the file:
+2. Locate ..\MyIDE\PNP\settings
+3. Delete the file "UserTools.xml" 
+4. Rename the file "UserTools.xml.new" to "UserTools.xml"
+
 
  
