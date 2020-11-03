@@ -1,4 +1,5 @@
-# MyIDE created from AVR-GCC 10.1.0 (works similar to WINAVR)
+# MyIDE created from AVR-GCC 10.1.0 
+## (works similar to WINAVR)
 This is the beta version of MyIDE intended for advanced Arduino-IDE<br>
 users. MyIDE is not a replacement for WINAVR.<br>
 It consists of 
