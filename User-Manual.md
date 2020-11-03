@@ -27,8 +27,9 @@ AVR-LibC	|	SVN with extras
 GDB	|	9.2 (not currently supported)
 AVRDUDE	|	6.3
 Make	|	4.2.1<br>
+
 I called the above tools "toolchain" located in folder "toolchain".
-> The advantage of "Zak Kemble" edition is the presence of all
-> needed tools like AVRDUDE and Make.exe.<br>
+The advantage of "Zak Kemble" edition is the presence of all
+needed tools like AVRDUDE and Make.exe.<br>
 
  
