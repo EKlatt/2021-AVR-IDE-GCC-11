@@ -28,8 +28,20 @@ GDB	|	9.2 (not currently supported)
 AVRDUDE	|	6.3
 Make	|	4.2.1<br>
 
-I called the above tools "toolchain" located in folder "toolchain".
-The advantage of "Zak Kemble" edition is the presence of all
+I called the above tools "toolchain" located in folder "toolchain".<br>
+The advantage of "Zak Kemble" edition is the presence of all<br>
 needed tools like AVRDUDE and Make.exe.<br>
+**Programmer's Notepad 2**
+As Editor I choosed portable Programmer's Notepad:<br>
+I made some additions in UserTools.xml<br>
+These additions will be found in the Tools-Menue:<br>
+Task	|	Command
+------------------|------------------
+compile and link	|	[MyIDE] make all F5.<br>
+flash choose	|	[MyIDE] make program F6.<br>
+clean	|	[MyIDE] make clean F7.<br>
+listing	|	[MyIDE] ls F8.<br>
+
+sdfsdf
 
  
