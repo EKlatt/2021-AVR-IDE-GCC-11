@@ -18,12 +18,17 @@ Hence do not change the structure of MyIDE.<br>
 Below the MyIDE main folder needs to be the following subfolders: <br>
 - archives, libraries, makefile, PNP, toolchain, utils<br>
 # Included tools
-AVR-GCC 10.1.0 for Windows 64 bit (by Zak Kemble)<br>
+**AVR-GCC 10.1.0** for Windows 64 bit (by Zak Kemble)<br>
 Tool	|	Version
 ----------|----------
 GCC	|	10.1.0
 Binutils	|	2.34
 AVR-LibC	|	SVN with extras
-GDB	|	9.2
+GDB	|	9.2 (not currently supported)
 AVRDUDE	|	6.3
 Make	|	4.2.1<br>
+I called the above tools "toolchain" located in folder "toolchain".
+> The advantage of "Zak Kemble" edition is the presence of all
+> needed tools like AVRDUDE and Make.exe.<br>
+
+ 
