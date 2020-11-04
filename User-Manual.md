@@ -17,14 +17,14 @@ This is done because Programmer's Notepad sends its installation-path to the mak
 Hence do not change the structure of MyIDE.<br>
 Below the MyIDE main folder needs to be the following subfolders: <br>
 
-<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<table width="500px" border="0" cellpadding="0" cellspacing="0">
   <tr>
-  <td>MyIDE   ---- </td>
-  <td>   +       </td>
-  <td>   +       </td>
-  <td>   +       </td>
-  <td>   +       </td>
-  <td>   +       </td>
+  <td>MyIDE --- </td>
+  <td>+ --------------</td>
+  <td>+ --------------</td>
+  <td>+ --------------</td>
+  <td>+ --------------</td>
+  <td>+</td>
  </tr>
  <tr>
   <td>&nbsp;</td>
@@ -60,11 +60,11 @@ Below the MyIDE main folder needs to be the following subfolders: <br>
  </tr>
 <tr>
   <td>&nbsp;</td>
+  <td>&nbsp;</td>
   <td>   |     </td>
   <td>   |     </td>
   <td>   |     </td>
-  <td>   |     </td>
-  <td>   |     </td>
+  <td>&nbsp;</td>
  </tr>
   <tr>
   <td>&nbsp;</td>
@@ -72,6 +72,70 @@ Below the MyIDE main folder needs to be the following subfolders: <br>
   <td>   + -- USART</td>
   <td>   + -- ctags</td>
   <td>   + -- bin</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>   |     </td>
+  <td>   |     </td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>   + -- presets</td>
+  <td>   + -- include</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>   |     </td>
+  <td>   |     </td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>   + -- schemes</td>
+  <td>   + -- lib</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>   |     </td>
+  <td>   |     </td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>   + -- settings</td>
+  <td>   + -- libexec</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>   |     </td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>   + -- share</td>
   <td>&nbsp;</td>
  </tr>
 </table>
