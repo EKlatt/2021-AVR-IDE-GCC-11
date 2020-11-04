@@ -25,28 +25,7 @@ The makefile will find all tools automatically.<br>
 This is done because Programmer's Notepad sends its directory-path to the makefile.<br>
 Hence do not change the structure of MyIDE.<br>
 Below the MyIDE main folder needs to be the following subfolders: <br>
-- archives, libraries, makefile, PNP, toolchain, utils<br>
-## First trial:<br>
-For a first trial copy the folder ..\MyIDE\examples e.g. to your desktop.<br>
-Open Programmer's Notepad pn.exe located in ...\MyIDE\PNP\pn.exe.<br>
-Create a Project: > File > New > Project; Name it MyIDE_Blink_C.<br>
-As "Folder" move to your location of ..\examples\MyIDE_Blink_C and open it.<br>
-Press ALT+F6 to open Projects and Rightclick on MyIDE_Blink_C and chose "Add Magic Folder...".<br>
-Look for ..\examples\MyIDE_Blink_C and choose it. Accept the following options.<br>
-## Open a Project-file:<br>
-It is absolutely nessesary to open a file within the present project.<br> 
-The directory of the file is needed for further actions.<br>
-Expand MyIDE_Blink_C and open Example.cpp.<br>
-## Getting the makefile:<br>
-Use menue  > Tools > [MyIDE] get makefile and click on it.<br>
-Rightclick on folder-symbol  "MyIDE_Blink_C" and Refresh.<br>
-Open makefile and edit AVRDUDE_PORT.<br>
-<br>
-Ready to go!<br>
-* If you want to compile and link choose > Tools > [MyIDE] make all F5.<br>
-* If you want to flash choose            > Tools > [MyIDE] make program F6.<br>
-* If you want to clean > Tools           > [MyIDE] make clean F7.<br>
-* If you want a listing > Tools          > [MyIDE] ls F8.<br>
+> archives, libraries, makefile, PNP, toolchain, utils<br>
 
 ## Thanks to the developpers! 
 I appreciate the work of Zak Kemble and his toolchain:<br>
