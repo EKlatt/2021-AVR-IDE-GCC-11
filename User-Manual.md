@@ -186,15 +186,15 @@ The directory of the file is needed for further actions.<br>
 Expand "MyIDE_Blink_C" and open "Example.cpp".<br>
 ## Getting the makefile:<br>
 Use menue<br>  
-> &lt; Tools > [MyIDE] get makefile and click on it.<br>
+> &gt; Tools > [MyIDE] get makefile and click on it.<br>
 > Rightclick on folder-symbol  "MyIDE_Blink_C" and Refresh.<br>
 > Open makefile and edit AVRDUDE_PORT.<br>
 <br>
 Ready to go:<br>
-> &lt; Tools > [MyIDE] make all     or F5.<br>
-> &lt; Tools > [MyIDE] make program or F6.<br>
-> &lt; Tools > [MyIDE] make clean   or F7.<br>
-> &lt; Tools > [MyIDE] ls           or F8.<br>
+> &gt; Tools > [MyIDE] make all     or F5.<br>
+> &gt; Tools > [MyIDE] make program or F6.<br>
+> &gt; Tools > [MyIDE] make clean   or F7.<br>
+> &gt; Tools > [MyIDE] ls           or F8.<br>
 
 
 
