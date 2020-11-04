@@ -159,12 +159,12 @@ needed tools like AVRDUDE and Make.exe.<br>
 As Editor I choosed portable Programmer's Notepad.<br>
 I made some additions in UserTools.xml<br>
 These additions will be found in the Tools-Menue:<br>
-Task	|	Command     |
+Task	|	Command     |    Key
 ------------------|------------------ | ----
-compile and link	|	[MyIDE] make all| F5.<br>
-flash	|	[MyIDE] make program| F6.<br>
-clean	|	[MyIDE] make clean| F7.<br>
-listing	|	[MyIDE] ls| F8.<br>
+compile and link	|	[MyIDE] make all | F5.<br>
+flash	|	[MyIDE] make program | F6.<br>
+clean	|	[MyIDE] make clean | F7.<br>
+listing	|	[MyIDE] ls | F8.<br>
 
 Progammer's Notepad is located in folder "../MyIDE/PNP".<br>
 In order to get the above mentioned enhancements, you need to do:<br>
