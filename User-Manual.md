@@ -1,4 +1,4 @@
-## MyIDE User-Manual
+# MyIDE User-Manual
 **By Enno Klatt<br>**
 MyIDE is a development tool for advanced Arduino-IDE users.<br>
 MyIDE is intended for programmers who want to understand the basics<br>
@@ -8,7 +8,7 @@ the basic components like:<br>
 * Programmer's Notepad 2
 * GNU utilities for Win32.<br>
 No debugging tools are added.<br>
-# Installation
+## Installation
 See details in "Install.md".<br>
 You may move the location of MyIDE where you want.<br>
 No settings of environment-values are nessesary.<br>
@@ -140,7 +140,7 @@ Below the MyIDE main folder needs to be the following subfolders: <br>
  </tr>
 </table>
 										  
-# Included tools
+## Included tools
 **AVR-GCC 10.1.0** for Windows 64 bit (by Zak Kemble)<br>
 Tool	|	Version
 ----------|----------
@@ -154,8 +154,8 @@ Make	|	4.2.1<br>
 I called the above tools "toolchain" located in folder "toolchain".<br>
 The advantage of "Zak Kemble's" edition is the presence of all<br>
 needed tools like AVRDUDE and Make.exe.<br>
-**Programmer's Notepad 2**<br>
 
+**Programmer's Notepad 2**<br>
 As Editor I choosed portable Programmer's Notepad.<br>
 I made some additions in UserTools.xml<br>
 These additions will be found in the Tools-Menue:<br>
@@ -176,7 +176,7 @@ In order to get the above mentioned enhancements, you need to do:<br>
 For a first trial copy the folder ..\MyIDE\examples e.g. to your desktop.<br>
 Open Programmer's Notepad pn.exe located in ...\MyIDE\PNP\pn.exe.<br>
 Create a Project: <br>
-> > File > New > Project; Name it MyIDE_Blink_C.<br>
+> >> File > New > Project; Name it MyIDE_Blink_C.<br>
 > As "Folder" move to your location of "..\examples\MyIDE_Blink_C" and open it.<br>
 > Press ALT+F6 to open Projects and Rightclick on "MyIDE_Blink_C" and chose "Add Magic Folder...".<br>
 > Look for ..\examples\MyIDE_Blink_C and choose it. Accept the following options.<br>
@@ -186,15 +186,15 @@ The directory of the file is needed for further actions.<br>
 Expand "MyIDE_Blink_C" and open "Example.cpp".<br>
 ## Getting the makefile:<br>
 Use menue<br>  
-> > Tools > [MyIDE] get makefile and click on it.<br>
+> >> Tools > [MyIDE] get makefile and click on it.<br>
 > Rightclick on folder-symbol  "MyIDE_Blink_C" and Refresh.<br>
 > Open makefile and edit AVRDUDE_PORT.<br>
 <br>
 Ready to go:<br>
-> > Tools > [MyIDE] make all     or F5.<br>
-> > Tools > [MyIDE] make program or F6.<br>
-> > Tools > [MyIDE] make clean   or F7.<br>
-> > Tools > [MyIDE] ls           or F8.<br>
+> >> Tools > [MyIDE] make all     or F5.<br>
+> >> Tools > [MyIDE] make program or F6.<br>
+> >> Tools > [MyIDE] make clean   or F7.<br>
+> >> Tools > [MyIDE] ls           or F8.<br>
 
 
 
