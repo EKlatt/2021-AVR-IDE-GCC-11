@@ -211,34 +211,38 @@ Instead of this "MyIDE" uses "GNU Make" and a "makefile". Commonly<br>
 the "makefile" has no extension.<br>
 Actual WINAVR works also with Make and a "makefile".<br>
 Instead of editing "platform.txt" you may edit a "makefile".<br>
-**Goal of MyIDE**
+
+**Goal of MyIDE**<br>
 If you want to understand what is going behind the scene, you<br>
 have to understand the building-process. That means, you start with<br>
 a C++ source-code and end up with flashing your microcontroller.<br>
 Hence becoming familiar with a "makefile" is a goal.<br>
 But for your assistance I developped a "makefile" ready to use.<br>
+
 **My makefile**<br>
 Hence the main task of MyIDE was the development of a makefile.<br>
 To start with I transmitted a number of ideas from the WINAVR makefile<br>
 written by Eric B. Weddington, Jörg Wunsch, et al.<br>
 Furthermore I decided to use the e.g. compiler and link options from "platform.txt".<br>
+
+**Getting makefile**<br>
 > Using &gt; Tools > [MyIDE] get makefile" you need to copy the "makefile"<br>
 > into your present project-folder.<br>
 
-*Extensions*<br>
+**Extensions**<br>
 > The new makefile is ready to use.<br>
-> You only need to edit the PORT if you work with a "ATmega328".
+> You only need to edit the PORT if you work with a "ATmega328".<br>
 > The type of source: C++, C or S-file (assembler) will be automatically<br>
 > detected and the related sources will be included in the building-process.
 
-*libraries*<br>
+**libraries**<br>
 Like the "Arduino-IDE" MyIDE comes with a folder called "libraries".<br>
-Place your additional libraries in this folder.<br>
+Place your additional libraries within subdirectories in this folder.<br>
 Each library will be automatically included in the compiling- and<br>
 link-process.<br>
 > Compiling: The reference in your source code needs to be e.g. '#include "lcd.h"'.<br>
 > Therefore your library within subfolder "lcd", in this case "lcd.h", will be<br>
-> searched for automatically.<br>
+> automatically searched for.<br>
 > Linking: The associated object-file "lcd.o" will also automatically searched for<br>
 > in the libray-folder.<br>
 
