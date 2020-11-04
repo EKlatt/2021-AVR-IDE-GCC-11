@@ -153,7 +153,7 @@ Make	|	4.2.1<br>
 
 I called the above tools "toolchain" located in folder "toolchain".<br>
 The advantage of "Zak Kemble's" edition is the presence of all<br>
-needed tools like AVRDUDE and Make.exe.<br>
+needed tools like AVRDUDE and Make.<br>
 
 **Programmer's Notepad 2**<br>
 As Editor I choosed portable Programmer's Notepad.<br>
@@ -165,6 +165,7 @@ compile and link	|	[MyIDE] make all | F5<br>
 flash	|	[MyIDE] make program | F6<br>
 clean	|	[MyIDE] make clean | F7<br>
 listing	|	[MyIDE] ls | F8<br>
+get makefile |	[MyIDE] get makefile | F9<br>
 
 Progammer's Notepad is located in folder "../MyIDE/PNP".<br>
 In order to get the above mentioned enhancements, you need to do:<br>
@@ -183,23 +184,64 @@ Create a Project: <br>
 ## Open a Project-file:<br>
 It is **absolutely nessesary** to **open a file** within the **present project**.<br> 
 All actions you choose in "menue tools" depends on this open file.<br> 
-The "menue option" sends the directory-name to the makefile.
-In consequence of this the commands like "avr-gcc.exe" can be founs from "make.exe".
+The "menue option" sends the directory-name to the "makefile".
+In consequence of this the commands like "avr-gcc.exe" can be found from "make.exe".
 Hence expand "MyIDE_Blink_C" and open "Example.cpp".<br>
 ## Getting the makefile:<br>
-Use menue:<br>  
+Use PN menue:<br>  
 > &gt; Tools > [MyIDE] get makefile and click on it.<br>
 > Rightclick on folder-symbol  "MyIDE_Blink_C" and Refresh.<br>
 > Open makefile and edit AVRDUDE_PORT.<br>
 <br>
 
 Ready to go:<br>
-> &gt; Tools > [MyIDE] make all     or F5.<br>
-> &gt; Tools > [MyIDE] make program or F6.<br>
-> &gt; Tools > [MyIDE] make clean   or F7.<br>
-> &gt; Tools > [MyIDE] ls           or F8.<br>
+> &gt; Tools > [MyIDE] make all     or F5<br>
+> &gt; Tools > [MyIDE] make program or F6<br>
+> &gt; Tools > [MyIDE] make clean   or F7<br>
+> &gt; Tools > [MyIDE] ls           or F8<br>
+> &gt; Tools > [MyIDE] get makefile or F9<br>
 
-...
+## Using GNU make<br>
+The Arduino-IDE comes not with GNU Make and a so called "makefile".<br>
+If you chose "compile/check" within the Arduino-IDE a tool called<br>
+"arduino-builder.exe" will be started. The options of the build-process<br>
+are defined in the file "platform.txt". Without this file the Arduino-IDE<br>
+will not run.<br>
+Instead of this "MyIDE" uses "GNU Make" and a "makefile". Commonly<br>
+the "makefile" has no extension.<br>
+Actual WINAVR works also with Make and a "makefile".<br>
+Instead of editing "platform.txt" you may edit a "makefile".<br>
+**Goal of MyIDE**
+If you want to understand what is going behind the scene, you<br>
+have to understand the building-process. That means, you start with<br>
+a C++ source-code and end up with flashing your microcontroller.<br>
+Hence becoming familiar with a "makefile" is a goal.<br>
+But for your assistance I developped a "makefile" ready to use.<br>
+**My makefile**<br>
+Hence the main task of MyIDE was the development of a makefile.<br>
+To start with I transmitted a number of ideas from the WINAVR makefile<br>
+written by Eric B. Weddington, Jörg Wunsch, et al.<br>
+Furthermore I decided to use the e.g. compiler and link options from "platform.txt".<br>
+> Using &gt; Tools > [MyIDE] get makefile" you need to copy the "makefile"<br>
+> into your present project-folder.<br>
+
+*Extensions*<br>
+> The new makefile is ready to use.<br>
+> You only need to edit the PORT if you work with a "ATmega328".
+> The type of source: C++, C or S-file (assembler) will be automatically<br>
+> detected and the related sources will be included in the building-process.
+
+*libraries*<br>
+Like the "Arduino-IDE" MyIDE comes with a folder called "libraries".<br>
+Place your additional libraries in this folder.<br>
+Each library will be automatically included in the compiling- and<br>
+link-process.<br>
+> Compiling: The reference in your source code needs to be e.g. '#include "lcd.h"'.<br>
+> Therefore your library within subfolder "lcd", in this case "lcd.h", will be<br>
+> searched for automatically.<br>
+> Linking: The associated object-file "lcd.o" will also automatically searched for<br>
+> in the libray-folder.<br>
+
 
 
 
