@@ -9,14 +9,29 @@ the basic components like:<br>
 * GNU utilities for Win32.<br>
 No debugging tools are added.<br>
 # Installation
-See "Install.md".<br>
-No further installation is needed.<br>
+See details in "Install.md".<br>
+You may move the location of MyIDE where you want.<br>
 No settings of environment-values are nessesary.<br>
 The makefile will find all tools automatically.<br>
-This is done because Programmer's Notepad sends its directory-path to the makefile.<br>
+This is done because Programmer's Notepad sends its installation-path to the makefile.<br>
 Hence do not change the structure of MyIDE.<br>
 Below the MyIDE main folder needs to be the following subfolders: <br>
-- archives, libraries, makefile, PNP, toolchain, utils<br>
+>MyIDE ----+---------+-----------+-------------+--------------+ <br>
+>          |         |           |             |              | <br>
+>      archives  libraries      PNP         toolchain       utils<br>
+>          |         |           |             |              |<br>
+>         core.a     + - lcd     + - clips     + -- avr     ls.exe<br>
+>                    |           |             |<br>
+>                    + - USART   + - ctags     + -- bin<br>		   
+>                                |             |<br>
+>	                             + - presets   + -- include<br>
+>                                |             |<br>       
+>	                             + - schemes   + -- lib<br>
+>	                             |             |<br>
+>	                             + - settings  + -- libexec<br>
+>                                              |<br>
+>	                                           + -- share<br><br>
+											  
 # Included tools
 **AVR-GCC 10.1.0** for Windows 64 bit (by Zak Kemble)<br>
 Tool	|	Version
