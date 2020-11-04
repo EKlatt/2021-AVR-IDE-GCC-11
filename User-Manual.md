@@ -190,7 +190,6 @@ Use menue<br>
 > Rightclick on folder-symbol  "MyIDE_Blink_C" and Refresh.<br>
 > Open makefile and edit AVRDUDE_PORT.<br>
 <br>
-
 Ready to go:<br>
 > &gt; Tools > [MyIDE] make all     or F5.<br>
 > &gt; Tools > [MyIDE] make program or F6.<br>
