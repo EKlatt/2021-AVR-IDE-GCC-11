@@ -16,7 +16,7 @@ The makefile will find all tools automatically.<br>
 This is done because Programmer's Notepad sends its installation-path to the makefile.<br>
 Hence do not change the structure of MyIDE.<br>
 Below the MyIDE main folder needs to be the following subfolders: <br>
->MyIDE ----+---------+-----------+-------------+--------------+ <br>
+>MyIDE  ---+---------+-----------+-------------+--------------+ <br>
 >          |         |           |             |              | <br>
 >      archives  libraries      PNP         toolchain       utils<br>
 >          |         |           |             |              |<br>
