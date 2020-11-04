@@ -173,23 +173,26 @@ In order to get the above mentioned enhancements, you need to do:<br>
 3. Rename the file "UserTools.xml.new" to "UserTools.xml"<br>
 
 ## First trial:<br>
-For a first trial copy the folder ..\MyIDE\examples e.g. to your desktop.<br>
-Open Programmer's Notepad pn.exe located in ...\MyIDE\PNP\pn.exe.<br>
+For a first trial copy the folder "..\MyIDE\examples" to your desktop.<br>
+Open Programmer's Notepad "pn.exe" located in "..\MyIDE\PNP\pn.exe".<br>
 Create a Project: <br>
 > \> File > New > Project; Name it MyIDE_Blink_C.<br>
 > As "Folder" move to your location of "..\examples\MyIDE_Blink_C" and open it.<br>
 > Press ALT+F6 to open Projects and Rightclick on "MyIDE_Blink_C" and chose "Add Magic Folder...".<br>
-> Look for ..\examples\MyIDE_Blink_C and choose it. Accept the following options.<br>
+> Look for "..\examples\MyIDE_Blink_C" and choose it. Accept the following options.<br>
 ## Open a Project-file:<br>
-It is absolutely nessesary to open a file within the present project.<br> 
-The directory of the file is needed for further actions.<br>
-Expand "MyIDE_Blink_C" and open "Example.cpp".<br>
+It is **absolutely nessesary** to **open a file** within the **present project**.<br> 
+All actions you choose in "menue tools" depends on this open file.<br> 
+The "menue option" sends the directory-name to the makefile.
+In consequence of this the commands like "avr-gcc.exe" can be founs from "make.exe".
+Hence expand "MyIDE_Blink_C" and open "Example.cpp".<br>
 ## Getting the makefile:<br>
-Use menue<br>  
+Use menue:<br>  
 > &gt; Tools > [MyIDE] get makefile and click on it.<br>
 > Rightclick on folder-symbol  "MyIDE_Blink_C" and Refresh.<br>
 > Open makefile and edit AVRDUDE_PORT.<br>
 <br>
+
 Ready to go:<br>
 > &gt; Tools > [MyIDE] make all     or F5.<br>
 > &gt; Tools > [MyIDE] make program or F6.<br>
