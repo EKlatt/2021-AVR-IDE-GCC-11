@@ -15,6 +15,7 @@ You may write your source code also in C and Assembler (S-files).<br>
 The "makefile" automatically detects all types of source-files.<br>
 In fact more than one source-file will be detected.<br>
 ## Ready to use makefile:<br>
+There is a ready to use makefile, which needs to be copied into project-folder.
 You only need to change the PORT according to your USB-connection.
 ## Installation of MyIDE:<br>
 Follow the instructions in INSTALL.md
