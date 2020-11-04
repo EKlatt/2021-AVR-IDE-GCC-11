@@ -16,22 +16,22 @@ The makefile will find all tools automatically.<br>
 This is done because Programmer's Notepad sends its installation-path to the makefile.<br>
 Hence do not change the structure of MyIDE.<br>
 Below the MyIDE main folder needs to be the following subfolders: <br>
->MyIDE  ---+---------+-----------+-------------+--------------+ <br>
->          |         |           |             |              | <br>
->      archives  libraries      PNP         toolchain       utils<br>
->          |         |           |             |              |<br>
->         core.a     + - lcd     + - clips     + -- avr     ls.exe<br>
->                    |           |             |<br>
->                    + - USART   + - ctags     + -- bin<br>		   
->                                |             |<br>
->	                             + - presets   + -- include<br>
->                                |             |<br>       
->	                             + - schemes   + -- lib<br>
->	                             |             |<br>
->	                             + - settings  + -- libexec<br>
->                                              |<br>
->	                                           + -- share<br><br>
-											  
+<p>MyIDE  ---+---------+-----------+-------------+--------------+ <br>
+          |         |           |             |              | <br>
+      archives  libraries      PNP         toolchain       utils<br>
+          |         |           |             |              |<br>
+         core.a     + - lcd     + - clips     + -- avr     ls.exe<br>
+                    |           |             |<br>
+                    + - USART   + - ctags     + -- bin<br>		   
+                                |             |<br>
+	                             + - presets   + -- include<br>
+                                |             |<br>       
+	                             + - schemes   + -- lib<br>
+	                             |             |<br>
+	                             + - settings  + -- libexec<br>
+                                              |<br>
+	                                           + -- share<br><br>
+</p>											  
 # Included tools
 **AVR-GCC 10.1.0** for Windows 64 bit (by Zak Kemble)<br>
 Tool	|	Version
