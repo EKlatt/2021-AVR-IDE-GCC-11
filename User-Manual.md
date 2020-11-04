@@ -161,10 +161,10 @@ I made some additions in UserTools.xml<br>
 These additions will be found in the Tools-Menue:<br>
 Task	|	Command     |    Key
 ------------------|------------------ | ----
-compile and link	|	[MyIDE] make all | F5.<br>
-flash	|	[MyIDE] make program | F6.<br>
-clean	|	[MyIDE] make clean | F7.<br>
-listing	|	[MyIDE] ls | F8.<br>
+compile and link	|	[MyIDE] make all | F5<br>
+flash	|	[MyIDE] make program | F6<br>
+clean	|	[MyIDE] make clean | F7<br>
+listing	|	[MyIDE] ls | F8<br>
 
 Progammer's Notepad is located in folder "../MyIDE/PNP".<br>
 In order to get the above mentioned enhancements, you need to do:<br>
@@ -172,7 +172,29 @@ In order to get the above mentioned enhancements, you need to do:<br>
 2. Rename the file "UserTools.xml" to "UserTools.xml.old"
 3. Rename the file "UserTools.xml.new" to "UserTools.xml"<br>
 
-
+## First trial:<br>
+For a first trial copy the folder ..\MyIDE\examples e.g. to your desktop.<br>
+Open Programmer's Notepad pn.exe located in ...\MyIDE\PNP\pn.exe.<br>
+Create a Project: <br>
+> > File > New > Project; Name it MyIDE_Blink_C.<br>
+> As "Folder" move to your location of "..\examples\MyIDE_Blink_C" and open it.<br>
+> Press ALT+F6 to open Projects and Rightclick on "MyIDE_Blink_C" and chose "Add Magic Folder...".<br>
+> Look for ..\examples\MyIDE_Blink_C and choose it. Accept the following options.<br>
+## Open a Project-file:<br>
+It is absolutely nessesary to open a file within the present project.<br> 
+The directory of the file is needed for further actions.<br>
+Expand "MyIDE_Blink_C" and open "Example.cpp".<br>
+## Getting the makefile:<br>
+Use menue<br>  
+> > Tools > [MyIDE] get makefile and click on it.<br>
+> Rightclick on folder-symbol  "MyIDE_Blink_C" and Refresh.<br>
+> Open makefile and edit AVRDUDE_PORT.<br>
+<br>
+Ready to go:<br>
+> > Tools > [MyIDE] make all     or F5.<br>
+> > Tools > [MyIDE] make program or F6.<br>
+> > Tools > [MyIDE] make clean   or F7.<br>
+> > Tools > [MyIDE] ls           or F8.<br>
 
 
 
