@@ -176,7 +176,7 @@ In order to get the above mentioned enhancements, you need to do:<br>
 For a first trial copy the folder ..\MyIDE\examples e.g. to your desktop.<br>
 Open Programmer's Notepad pn.exe located in ...\MyIDE\PNP\pn.exe.<br>
 Create a Project: <br>
-> /> File > New > Project; Name it MyIDE_Blink_C.<br>
+> \> File > New > Project; Name it MyIDE_Blink_C.<br>
 > As "Folder" move to your location of "..\examples\MyIDE_Blink_C" and open it.<br>
 > Press ALT+F6 to open Projects and Rightclick on "MyIDE_Blink_C" and chose "Add Magic Folder...".<br>
 > Look for ..\examples\MyIDE_Blink_C and choose it. Accept the following options.<br>
