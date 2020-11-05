@@ -242,13 +242,86 @@ Like the "Arduino-IDE" MyIDE comes with a folder called "libraries".<br>
 Place your additional libraries within subdirectories in this folder.<br>
 Each library will be automatically included in the compiling- and<br>
 link-process.<br>
+Hence follow this structure:<br>
+ <table width="500px" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+  <td>MyIDE --- </td>
+  <td>+ --------------</td>
+  <td>+</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>|</td>
+  <td>|</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>archives</td>
+  <td>libraries ---</td>
+  <td>+ ----</td>
+  <td> ----</td>
+  <td>+</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>|</td>
+  <td>&nbsp;</td>
+  <td>|</td>
+ </tr>
+  <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>lcd ---</td>
+  <td>+</td>
+  <td>USART ---</td>
+  <td>+</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>|</td>
+  <td>&nbsp;</td>
+  <td>|</td>
+ </tr>
+<tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>lcd.h</td>
+  <td>&nbsp;</td>
+  <td>USART.h</td>
+ </tr>
+<tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>lcd.o</td>
+  <td>&nbsp;</td>
+  <td>USART.o</td>
+ </tr>
+</table><br>
+
 > *Compiling:*<br>
 > The reference in your source code needs to be - #include "lcd.h" -.<br>
 > Therefore your library within subfolder "lcd", in this case "lcd.h", will be<br>
-> automatically scannded for.<br>
+> scannded for automatically.<br>
 > *Linking:*<br>
+
+
+**Archives**<br>
+> *Linking:*<br>
+
 > The associated object-file "lcd.o" will also automatically scanned for<br>
 > in the libray-folder.<br>
+
+
 
 
 
