@@ -181,15 +181,15 @@ Create a Project: <br>
 > As "Folder" move to your location of "..\examples\MyIDE_Blink_C" and open it.<br>
 > Press ALT+F6 to open Projects and Rightclick on "MyIDE_Blink_C" and chose "Add Magic Folder...".<br>
 > Look for "..\examples\MyIDE_Blink_C" and choose it. Accept the following options.<br>
-## Open a Project-file:<br>
+## Open a Source-file:<br>
 It is **absolutely nessesary** to **open a file** within the **present project**.<br> 
 All actions you choose in "menue tools" depends on this open file.<br> 
-The "menue option" sends the directory-name to the "makefile".
+The "menue option" sends the directory-name to the "makefile".<br>
 In consequence of this the commands like "avr-gcc.exe" can be found from "make.exe".
 Hence expand "MyIDE_Blink_C" and open "Example.cpp".<br>
 ## Getting the makefile:<br>
 Use PN menue:<br>  
-> &gt; Tools > [MyIDE] get makefile and click on it.<br>
+> &gt; Tools > "[MyIDE] get makefile" and click on it.<br>
 > Rightclick on folder-symbol  "MyIDE_Blink_C" and Refresh.<br>
 > Open makefile and edit AVRDUDE_PORT.<br>
 <br>
@@ -210,20 +210,22 @@ will not run.<br>
 Instead of this "MyIDE" uses "GNU Make" and a "makefile". Commonly<br>
 the "makefile" has no extension.<br>
 Actual WINAVR works also with Make and a "makefile".<br>
-Instead of editing "platform.txt" you may edit a "makefile".<br>
+Instead of editing "platform.txt" you may edit my "makefile".<br>
 
 **Goal of MyIDE**<br>
-If you want to understand what is going behind the scene, you<br>
+If you want to understand what is going on behind the scene, you<br>
 have to understand the building-process. That means, you start with<br>
 a C++ source-code and end up with flashing your microcontroller.<br>
 Hence becoming familiar with a "makefile" is a goal.<br>
-But for your assistance I developped a "makefile" ready to use.<br>
+*But for your assistance I developped a "makefile" ready to use.<br>*
 
 **My makefile**<br>
 Hence the main task of MyIDE was the development of a makefile.<br>
-To start with I transmitted a number of ideas from the WINAVR makefile<br>
+To start with I transfered a number of ideas from the WINAVR makefile<br>
 written by Eric B. Weddington, Jörg Wunsch, et al.<br>
-Furthermore I decided to use the e.g. compiler and link options from "platform.txt".<br>
+
+**Compiler and Linker options**<br>
+I decided to use the options from Arduino "platform.txt".<br>
 
 **Getting makefile**<br>
 > Using &gt; Tools > [MyIDE] get makefile" you need to copy the "makefile"<br>
@@ -235,15 +237,17 @@ Furthermore I decided to use the e.g. compiler and link options from "platform.t
 > The type of source: C++, C or S-file (assembler) will be automatically<br>
 > detected and the related sources will be included in the building-process.
 
-**libraries**<br>
+**Libraries**<br>
 Like the "Arduino-IDE" MyIDE comes with a folder called "libraries".<br>
 Place your additional libraries within subdirectories in this folder.<br>
 Each library will be automatically included in the compiling- and<br>
 link-process.<br>
-> Compiling: The reference in your source code needs to be e.g. '#include "lcd.h"'.<br>
+> *Compiling:*<br>
+> The reference in your source code needs to be - #include "lcd.h" -.<br>
 > Therefore your library within subfolder "lcd", in this case "lcd.h", will be<br>
-> automatically searched for.<br>
-> Linking: The associated object-file "lcd.o" will also automatically searched for<br>
+> automatically scannded for.<br>
+> *Linking:*<br>
+> The associated object-file "lcd.o" will also automatically scanned for<br>
 > in the libray-folder.<br>
 
 
