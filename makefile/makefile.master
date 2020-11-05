@@ -16,14 +16,13 @@
 # https://gcc.gnu.org/onlinedocs/gcc/index.html#SEC_Contents
 # https://stackoverflow.com/questions/9551416/gnu-make-how-to-join-list-and-separate-it-with-separator
 
-# The target-file generates "main.hex"
+# The target-file generates "myApp.hex"
 # Choose a name as you want!
 TARGET := myApp
 
-# Comment out the next options if you use makefile.master standalone
 # Must be declared because we are crosscompiling
-MCU    = atmega328p
-F_CPU  = 16000000
+MCU    := atmega328p
+F_CPU  := 16000000
 
 # Flash options
 AVRDUDE_PROGRAMMER   := arduino
@@ -32,6 +31,7 @@ AVRDUDE_PORT         := com4
 
 # Paths to toolchain and UnxUtils
 # PNP is the path to notepad++.exe given as a parameter of make.exe
+# "compile" is s make-option
 # e.g. "$(PNPath)../toolchain/bin/make PNP=$(PNPath) compile"
 PNP        := .
 BINARIES   := $(PNP)../toolchain/bin
@@ -39,12 +39,12 @@ UTILS      := $(PNP)../utils
 
 # Making UnxUtils like "ls.exe" visible to make.exe
 # You need to use ":=" to expand the Windows-PATH and 
-# New PATH will exist in environment of make.exe
+# A changed PATH will exist in environment of make.exe
 PATH := $(UTILS);$(PATH)
 
 # Directory to look for archive-files
 # This file: "core.a" is needed for linking
-ARCH       = .
+ARCH     := $(PNP)../archives
 LOADLIBS = $(ARCH)/core.a
 
 # If you want to add additional archives
@@ -54,12 +54,12 @@ LOADLIBS = $(ARCH)/core.a
 INCLUDE_DIR := $(PNP)../libraries
 
 # Path to object-files o-files of precompiled user libraries
-# e.g. precompiled files like USART.o or LCD.o
+# e.g. precompiled files like USART.o or lcd.o
 # located in a subdirectory like "../libraries/lcd"
 OBJFILES := $(PNP)../libraries
 
 # The compiler needs to know the locations of non-system header-files
-# Location of headerfiles like USART.h or LCD.h
+# Location of headerfiles like USART.h or lcd.h
 # e.g. located in a subdirectory like "../libraries/lcd"
 	# Version 1
 	# Add in source code #include "lcd/lcd.h"
@@ -132,21 +132,32 @@ REMOVEDIR = rm -rf
 	# The MMD flag creates the dependency files for each source-file
 	# flto standard link-time optimizer during compile and link
 CXXFLAGS   = -g -Os -Wall -Wextra 
-CXXFLAGS  += -std=gnu++11 -MMD -flto
+CXXFLAGS  += -std=gnu++11
 CXXFLAGS  += -fpermissive -fno-exceptions 
 CXXFLAGS  += -ffunction-sections -fdata-sections -fno-threadsafe-statics
+CXXFLAGS  += -Wno-error=narrowing
 CXXFLAGS  += -MMD
 CXXFLAGS  += -flto
 
-CFLAGS     = -g -Os -Wall -Wextra -MMD 
-ASFLAGS    = -g -x assembler-with-cpp -Wall -Wextra -MMD -flto 
-CXXDEFS    = -DF_CPU=$(F_CPU)L
-CDEFS      = -DF_CPU=$(F_CPU)L
-ADEFS      = -DF_CPU=$(F_CPU)
+CFLAGS    = -g -Os -Wall -Wextra
+CFLAGS   += -std=gnu11 
+CFLAGS   += -ffunction-sections -fdata-sections
+CFLAGS   += -MMD
+CFLAGS   += -flto 
+CFLAGS   += -fno-fat-lto-objects
 
-# Linking
-LDFLAGS  = -g -Os -Wall -flto -fuse-linker-plugin -Wl,-Map=$(DEBDIR)/$(TARGET).map,--cref
-MATH_LIB = -lm
+ASFLAGS   = -g -x assembler-with-cpp -Wall -Wextra 
+ASFLAGS  += -MMD
+ASFLAGS  += -flto
+ 
+CXXDEFS   = -DF_CPU=$(F_CPU)L
+CDEFS     = -DF_CPU=$(F_CPU)L
+ADEFS     = -DF_CPU=$(F_CPU)
+
+# Linking, creating elf
+LDFLAGS    = -g -Os -Wall -flto -fuse-linker-plugin -Wl,--gc-sections
+LDFLAGS   += -Wl,-Map=$(DEBDIR)/$(TARGET).map,--cref
+MATH_LIB   = -lm
 
 # Flashing/Programming Arduino Flags
 AVRDUDE_WRITE_FLASH  = -U flash:w:$(TARGET).hex:i
@@ -206,8 +217,7 @@ $(ARCH)/core.a: $(ARCHF)
 	@echo .	
 	@echo -- Step .elf to .hex --
 	@echo -- $< to $@ --
-	$(OBJCOPY) -O ihex -R .eeprom $< $@
-#	$(OBJCOPY) -j .text -j .data -O ihex $< $@
+	$(OBJCOPY) -O $(FORMAT) -R .eeprom $< $@
 	
 %.eep: %.elf
 	@echo .	
@@ -229,7 +239,6 @@ $(ARCH)/core.a: $(ARCHF)
 	@echo -- Symbol table -- 
 	@echo -- $< nach $@ --
 	$(NM) -n $< > $(DEBDIR)/$@
-
 
 # define general rule to link .elf from .o
 # ELF Production File Format
