@@ -7,6 +7,7 @@ the basic components like:<br>
 * AVR-GCC 10.1.0 for Windows 64 bit
 * Programmer's Notepad 2
 * GNU utilities for Win32.<br>
+
 No debugging tools are added.<br>
 ## Installation
 See details in "Install.md".<br>
@@ -219,7 +220,7 @@ Ready to go:<br>
 If you choose "compile/check" within the Arduino-IDE a tool called<br>
 "arduino-builder.exe" will be started. The options of the build-process<br>
 are defined in the file "platform.txt".<br>
-Actual WINAVR works also with Make and a "makefile".<br>
+Actual WINAVR works with Make and a "makefile".<br>
 Therefore I decided to use "GNU Make" with a "makefile" for MyIDE.<br>
 
 **Goal of MyIDE**<br>
@@ -338,13 +339,13 @@ The reference in your source code needs to be **#include "lcd.h"**.<br>
 Notice the above structure, therein the header file "lcd.h" will be<br>
 scannded for automatically.<br>
 
-**Linking:**<br>
+**Linking**<br>
 At the beginning of the build-process a **archive-file** named "core.a",<br>
 which contains all object-files of the added libraries will be created.<br>
 The archive-file is located in "../MyIDE/archives".<br>
 The linker scannes "core.a" in order to find the functions reffered to<br>
 in the header file.<br>
-> If you "clean" the files of the build process "core.a" will be beleted.<br>
+> If you "clean" the files of the build process "core.a" will be deleted.<br>
 
 **Archives**<br>
 You may add an archive-file. Doing this you need advanced experience with Make.<br>
