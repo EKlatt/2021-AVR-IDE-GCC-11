@@ -17,43 +17,48 @@ This is done because Programmer's Notepad sends its installation-path to the mak
 Hence do not change the structure of MyIDE.<br>
 Below the MyIDE main folder needs to be the following subfolders: <br>
 
-<table width="500px" border="0" cellpadding="0" cellspacing="0">
+<table width="600px" border="0" cellpadding="0" cellspacing="0">
   <tr>
   <td>MyIDE --- </td>
   <td>+ --------------</td>
   <td>+ --------------</td>
+  <td>+ ----------------</td>
   <td>+ --------------</td>
   <td>+ --------------</td>
   <td>+</td>
  </tr>
  <tr>
   <td>&nbsp;</td>
-  <td>   |       </td>
-  <td>   |       </td>
-  <td>   |       </td>
-  <td>   |       </td>
-  <td>   |       </td>
+  <td>|</td>
+  <td>|</td>
+  <td>|</td>
+  <td>|</td>
+  <td>|</td>
+  <td>|</td>
  </tr>
  <tr>
   <td>&nbsp;</td>
   <td>archives</td>
   <td>libraries</td>
+  <td>makefile</td>
   <td>PNP</td>
   <td>toolchain</td>
   <td>utils</td>
  </tr>
  <tr>
   <td>&nbsp;</td>
-  <td>   |     </td>
-  <td>   |     </td>
-  <td>   |     </td>
-  <td>   |     </td>
-  <td>   |     </td>
+  <td>|</td>
+  <td>|</td>
+  <td>|</td>
+  <td>|</td>
+  <td>|</td>
+  <td>|</td>
  </tr>
  <tr>
   <td>&nbsp;</td>
   <td>core.a</td>
   <td>   + -- lcd</td>
+  <td>makefile.master</td>
   <td>   + -- clips</td>
   <td>   + -- avr</td>
   <td>ls.exe</td>
@@ -61,15 +66,16 @@ Below the MyIDE main folder needs to be the following subfolders: <br>
 <tr>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>   |     </td>
-  <td>   |     </td>
-  <td>   |     </td>
+  <td>|</td>
   <td>&nbsp;</td>
+  <td>|</td>
+  <td>|</td>
  </tr>
   <tr>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>   + -- USART</td>
+  <td>&nbsp;</td>
   <td>   + -- ctags</td>
   <td>   + -- bin</td>
   <td>&nbsp;</td>
@@ -78,11 +84,13 @@ Below the MyIDE main folder needs to be the following subfolders: <br>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>   |     </td>
-  <td>   |     </td>
+  <td>&nbsp;</td>
+  <td>|</td>
+  <td>|</td>
   <td>&nbsp;</td>
  </tr>
  <tr>
+  <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -94,11 +102,13 @@ Below the MyIDE main folder needs to be the following subfolders: <br>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>   |     </td>
-  <td>   |     </td>
+  <td>&nbsp;</td>
+  <td>|</td>
+  <td>|</td>
   <td>&nbsp;</td>
  </tr>
  <tr>
+  <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -110,11 +120,13 @@ Below the MyIDE main folder needs to be the following subfolders: <br>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>   |     </td>
-  <td>   |     </td>
+  <td>&nbsp;</td>
+  <td>|</td>
+  <td>|</td>
   <td>&nbsp;</td>
  </tr>
  <tr>
+  <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
@@ -127,7 +139,8 @@ Below the MyIDE main folder needs to be the following subfolders: <br>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>   |     </td>
+  <td>|</td>
+  <td>|</td>
   <td>&nbsp;</td>
  </tr>
  <tr>
@@ -135,10 +148,11 @@ Below the MyIDE main folder needs to be the following subfolders: <br>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
+  <td>pn.exe</td>
   <td>   + -- share</td>
   <td>&nbsp;</td>
  </tr>
-</table>
+</table><br>
 										  
 ## Included tools
 **AVR-GCC 10.1.0** for Windows 64 bit (by Zak Kemble)<br>
@@ -228,19 +242,20 @@ written by Eric B. Weddington, Jörg Wunsch, et al.<br>
 I decided to use the options from Arduino "platform.txt".<br>
 
 **Getting makefile**<br>
-> Using &gt; Tools > [MyIDE] get makefile" you need to copy the "makefile"<br>
+> Using &gt; Tools > "[MyIDE] get makefile" you get a copy of <br>
+> "../makefile/makefile.master", renamed to "makefile",
 > into your present project-folder.<br>
 
 **Extensions**<br>
 > The new makefile is ready to use.<br>
-> You only need to edit the PORT if you work with a "ATmega328".<br>
+> You only need to edit the *PORT* if you work with a "ATmega328".<br>
 > The type of source: C++, C or S-file (assembler) will be automatically<br>
 > detected and the related sources will be included in the building-process.
 
 **Libraries**<br>
-Like the "Arduino-IDE" MyIDE comes with a folder called "libraries".<br>
-Place your additional libraries within subdirectories in this folder.<br>
-Each library will be automatically included in the compiling- and<br>
+Like the "Arduino-IDE" MyIDE comes with a folder called "../MyIDE/libraries".<br>
+Create your library (subfolder) and add the *.h and *.o files.<br>
+The library-files will be automatically included in the compile- and<br>
 link-process.<br>
 Hence follow this structure:<br>
  <table width="500px" border="0" cellpadding="0" cellspacing="0">
