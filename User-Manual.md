@@ -325,7 +325,7 @@ Hence follow this structure:<br>
 </table><br>
 
 **Header file**<br>
-The reference in your source code needs to be ** #include "lcd.h" **.<br>
+The reference in your source code needs to be **#include "lcd.h"**.<br>
 Notice the above structure, therein the header file "lcd.h" will be<br>
 scannded for automatically.<br>
 
