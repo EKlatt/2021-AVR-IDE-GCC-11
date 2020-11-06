@@ -1,7 +1,7 @@
 <head>
-<meta name="description" content="2020 WINAVR clone"><br>
-<meta name="keywords" content="MyIDE, WinAVR, Arduino, C++"><br>
-<meta name="author" content="Enno Klatt"><br>
+<meta name="description" content="2020 WINAVR clone">
+<meta name="keywords" content="MyIDE, WinAVR, Arduino, C++">
+<meta name="author" content="Enno Klatt">
 </head>
 
 # MyIDE created from AVR-GCC 10.1.0 
