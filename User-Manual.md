@@ -237,11 +237,12 @@ Hence becoming familiar with a "makefile" is a goal.<br>
 Hence the main task of MyIDE was the development of a makefile.<br>
 To start with I transfered a number of ideas from the WINAVR makefile<br>
 written by Eric B. Weddington, Jörg Wunsch, et al.<br>
+My "makefile" is located in "../makefile/makefile.master".<br>
 
 **Compiler and Linker options**<br>
 I decided to use the options from Arduino "platform.txt".<br>
 
-**Getting makefile**<br>
+**Copy "makefile.master"**<br>
 > Using &gt; Tools > "[MyIDE] get makefile" you get a copy of <br>
 > "../makefile/makefile.master", renamed to "makefile",
 > into your present project-folder.<br>
@@ -323,19 +324,21 @@ Hence follow this structure:<br>
  </tr>
 </table><br>
 
-> *Compiling:*<br>
-> The reference in your source code needs to be - #include "lcd.h" -.<br>
-> Therefore your library within subfolder "lcd", in this case "lcd.h", will be<br>
-> scannded for automatically.<br>
-> *Linking:*<br>
+**Header file**<br>
+The reference in your source code needs to be ** #include "lcd.h" **.<br>
+Notice the above structure, therein the header file "lcd.h" will be<br>
+scannded for automatically.<br>
 
+**Linking:**<br>
+At the beginning of the build-process a **archive-file** named "core.a",<br>
+which contains all object-files of the added libraries will be created.<br>
+The archive-file is located in "../MyIDE/archives".<br>
+The linker scannes "core.a" in order to find the functions reffered to<br>
+in the header file.<br>
+> If you "clean" the files of the build process "core.a" will beleted.<br>
 
 **Archives**<br>
-> *Linking:*<br>
-
-> The associated object-file "lcd.o" will also automatically scanned for<br>
-> in the libray-folder.<br>
-
+You may add an archive-file. Doing this you need advanced experience with Make.<br>
 
 
 
