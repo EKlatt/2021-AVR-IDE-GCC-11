@@ -1,3 +1,7 @@
+<meta name="MyIDE" content="2020 WINAVR clone" />
+<meta name="keywords" content="MyIDE, WinAVR, Arduino, C++"/>
+<meta name="author" content="Enno Klatt" />
+<meta name="robots" content="index"/>
 # MyIDE created from AVR-GCC 10.1.0 
 ## (works similar to WINAVR)
 This is the beta version of MyIDE intended for advanced Arduino-IDE<br>
