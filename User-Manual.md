@@ -216,22 +216,21 @@ Ready to go:<br>
 > &gt; Tools > [MyIDE] get makefile or F9<br>
 
 ## Using GNU make<br>
-The Arduino-IDE comes not with GNU Make and a so called "makefile".<br>
-If you chose "compile/check" within the Arduino-IDE a tool called<br>
+If you choose "compile/check" within the Arduino-IDE a tool called<br>
 "arduino-builder.exe" will be started. The options of the build-process<br>
-are defined in the file "platform.txt". Without this file the Arduino-IDE<br>
-will not run.<br>
-Instead of this "MyIDE" uses "GNU Make" and a "makefile". Commonly<br>
-the "makefile" has no extension.<br>
+are defined in the file "platform.txt".<br>
 Actual WINAVR works also with Make and a "makefile".<br>
-Instead of editing "platform.txt" you may edit my "makefile".<br>
+Therefore I decided to use "GNU Make" with a "makefile" for MyIDE.<br>
 
 **Goal of MyIDE**<br>
 If you want to understand what is going on behind the scene, you<br>
 have to understand the building-process. That means, you start with<br>
 a C++ source-code and end up with flashing your microcontroller.<br>
 Hence becoming familiar with a "makefile" is a goal.<br>
-*But for your assistance I developped a "makefile" ready to use.<br>*
+The makefile defines the building-process and has it's own language.<br>
+
+> **But for your assistance I developped a "makefile" ready to use.**<br>
+You may use this makefile, modify it or develop your own.<br>
 
 **My makefile**<br>
 Hence the main task of MyIDE was the development of a makefile.<br>
@@ -239,23 +238,33 @@ To start with I transfered a number of ideas from the WINAVR makefile<br>
 written by Eric B. Weddington, Jörg Wunsch, et al.<br>
 My "makefile" is located in "../makefile/makefile.master".<br>
 
+**Extensions**<br>
+I decided to develop a makefile which works like the build-process<br>
+of the Arduino-IDE. You only need to edit the PORT and new are ready to go.<br>
+
+> The type of source: C++, C or S-file (assembler) will be automatically<br>
+> detected and the related sources will be included in the building-process.<br>
+
+> Header files from the user-libraris and the associated<br> 
+> object-files will be scanned for automatically.<br> 
+
 **Compiler and Linker options**<br>
 I decided to use the options from Arduino "platform.txt".<br>
 
 **Copy "makefile.master"**<br>
+> Each project needs to have a makefile.<br>
 > Using &gt; Tools > "[MyIDE] get makefile" you get a copy of <br>
 > "../makefile/makefile.master", renamed to "makefile",
 > into your present project-folder.<br>
 
-**Extensions**<br>
-> The new makefile is ready to use.<br>
-> You only need to edit the *PORT* if you work with a "ATmega328".<br>
-> The type of source: C++, C or S-file (assembler) will be automatically<br>
-> detected and the related sources will be included in the building-process.
+**Editing PORT**<br>
+> You only need to edit the *PORT*, if you work with a "ATmega328".<br>
 
 **Libraries**<br>
 Like the "Arduino-IDE" MyIDE comes with a folder called "../MyIDE/libraries".<br>
-Create your library (subfolder) and add the *.h and *.o files.<br>
+These subfolders are intended for user-libraries which you create or<br>
+got from other sources.<br>
+Create a subfolder for the user-library and add the *.h and *.o files.<br>
 The library-files will be automatically included in the compile- and<br>
 link-process.<br>
 Hence follow this structure:<br>
@@ -335,7 +344,7 @@ which contains all object-files of the added libraries will be created.<br>
 The archive-file is located in "../MyIDE/archives".<br>
 The linker scannes "core.a" in order to find the functions reffered to<br>
 in the header file.<br>
-> If you "clean" the files of the build process "core.a" will beleted.<br>
+> If you "clean" the files of the build process "core.a" will be beleted.<br>
 
 **Archives**<br>
 You may add an archive-file. Doing this you need advanced experience with Make.<br>
