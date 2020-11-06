@@ -17,14 +17,14 @@ This is done because Programmer's Notepad sends its installation-path to the mak
 Hence do not change the structure of MyIDE.<br>
 Below the MyIDE main folder needs to be the following subfolders: <br>
 
-<table width="600px" border="0" cellpadding="0" cellspacing="0">
+<table width="530px" border="0" cellpadding="0" cellspacing="0">
   <tr>
-  <td>MyIDE --- </td>
-  <td>+ --------------</td>
-  <td>+ --------------</td>
+  <td>MyIDE -- </td>
+  <td>+ --------</td>
+  <td>+ -------------</td>
   <td>+ ----------------</td>
-  <td>+ --------------</td>
-  <td>+ --------------</td>
+  <td>+ -------------</td>
+  <td>+ -----------</td>
   <td>+</td>
  </tr>
  <tr>
