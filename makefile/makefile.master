@@ -1,20 +1,5 @@
-# https://linux.die.net/man/1/avr-gcc
-# https://www.rapidtables.com/code/linux/gcc.html
-# http://nuclear.mutantstargoat.com/articles/make/
-# http://make.mad-scientist.net/papers/advanced-auto-dependency-generation/#combine
-# https://gcc.gnu.org/onlinedocs/gcc/Environment-Variables.html
-# https://gcc.gnu.org/onlinedocs/gcc/Keyword-Index.html#Keyword-Index
-# https://berrendorf.inf.h-brs.de/sonstiges/make.html
-# https://www.gnu.org/software/make/manual/html_node/index.html#SEC_Contents
-# https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html
-# https://de.wikibooks.org/wiki/C-Programmierung_mit_AVR-GCC:_Arbeiten_mit_make
-# https://rn-wissen.de/wiki/index.php/Avr-gcc#Kommandozeilen-Optionen
-# https://de.wikibooks.org/wiki/C-Programmierung_mit_AVR-GCC/_Hello_World
-# https://blog.podkalicki.com/how-to-compile-and-burn-the-code-to-avr-chip-on-linuxmacosxwindows/
-# https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/
-# https://www.oreilly.com/library/view/managing-projects-with/0596006101/ch01.html
-# https://gcc.gnu.org/onlinedocs/gcc/index.html#SEC_Contents
-# https://stackoverflow.com/questions/9551416/gnu-make-how-to-join-list-and-separate-it-with-separator
+# This "makefile" named "makefile.master" is fundamental for MyIDE
+# Developped from Enno Klatt in 2020
 
 # The target-file generates "myApp.hex"
 # Choose a name as you want!
