@@ -2,7 +2,7 @@
 https://gcc.gnu.org/onlinedocs/gcc/index.html#SEC_Contents<br>
 https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html<br>
 
-**Options of avr-gcc project C and C++ compiler:**<br><br>
+**Options of avr-gcc project C and C++ compiler:**<br>
 https://linux.die.net/man/1/avr-gcc<br>
 https://www.rapidtables.com/code/linux/gcc.html<br>
 https://rn-wissen.de/wiki/index.php/Avr-gcc<br>
