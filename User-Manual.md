@@ -351,6 +351,7 @@ in the header file.<br>
 You may add an archive-file. Doing this you need advanced experience with Make.<br>
 
 *Steps of programmimg skills*<br>
+ in work...
 
 
 
