@@ -190,8 +190,33 @@ In order to get the above mentioned enhancements, you need to do:<br>
 
 ## First trial:<br>
 For a first trial copy the folder "..\MyIDE\examples" to your desktop.<br>
-Open Programmer's Notepad "pn.exe" located in "..\MyIDE\PNP\pn.exe".<br>
-Create a Project: <br>
+> Open Programmer's Notepad "pn.exe" located in "..\MyIDE\PNP\pn.exe".<br>
+> Open a existing Programmer's Notepad Project.<br>
+> \> File > Open Project(s)...> and navigate to folder "..\examples\MyIDE_Blink_C"<br>
+> and open "MyIDE_Blink_C.pnpproj"<br>
+> Press ALT+F6 to open Projects expand folder "MyIDE_Blink_C"<br>
+
+## Open a Source-file:<br>
+It is **absolutely nessesary** to **open a file** within the **present project**.<br> 
+All actions you choose in "menue tools" depends on this open file.<br> 
+The "menue option" sends the directory-name to the "makefile".<br>
+In consequence of this the commands like "avr-gcc.exe" can be found from "make.exe".
+> Hence open "Example.cpp".<br>
+
+## Compile..:<br>
+In this example the makefile is already present.<br>
+> Open makefile and edit AVRDUDE_PORT.<br>
+
+## Menue Tools:<br>
+> &gt; Tools > [MyIDE] make all     or F5<br>
+> &gt; Tools > [MyIDE] make program or F6<br>
+> &gt; Tools > [MyIDE] make clean   or F7<br>
+> &gt; Tools > [MyIDE] ls           or F8<br>
+> &gt; Tools > [MyIDE] get makefile or F9<br>
+
+## New Project ##
+Suppose there exists a folder with a source file but no PN Project.<br>
+**Create a Project: <br>**
 > \> File > New > Project; Name it MyIDE_Blink_C.<br>
 > As "Folder" move to your location of "..\examples\MyIDE_Blink_C" and open it.<br>
 > Press ALT+F6 to open Projects and Rightclick on "MyIDE_Blink_C" and chose "Add Magic Folder...".<br>
@@ -208,13 +233,6 @@ Use PN menue:<br>
 > Rightclick on folder-symbol  "MyIDE_Blink_C" and Refresh.<br>
 > Open makefile and edit AVRDUDE_PORT.<br>
 <br>
-
-Ready to go:<br>
-> &gt; Tools > [MyIDE] make all     or F5<br>
-> &gt; Tools > [MyIDE] make program or F6<br>
-> &gt; Tools > [MyIDE] make clean   or F7<br>
-> &gt; Tools > [MyIDE] ls           or F8<br>
-> &gt; Tools > [MyIDE] get makefile or F9<br>
 
 ## Using GNU make<br>
 If you choose "compile/check" within the Arduino-IDE a tool called<br>
