@@ -35,29 +35,29 @@ I followed some ideas from the Arduino-library.<br>
 
 **Example<br>**
 ___________________________________________________________________________________________________________<br>
-#include <avr/io.h><br>
-#include <util/delay.h><br>
-#include "USART.h"						// customized for ATmega328P<br>
-
-int main(void) {<br>
-	USART_Init();						// USART initialization for 9600 baud, ATmega328<br>
-	print("Hello world\n");				// "Hello world" - String["..."], '\0' automatically added<br>
-	   
-	while (1) {<br>
-		char char_Value = 'a';				// the single character 'a'<br>
-		print(char_Value);<br>
-		println();							// just a linefeed<br>
-											// C-char string terminated with '\0'<br>
-		char msg1[6] = {'o', 'k', 'a', 'y', '\r', '\0'};<br>
-		print(msg1);<br>
-		println();<br>
-		
-		int int_Value = -32767;				// int16_t - signed number from -32768 to 32767<br>
-		print(int_Value);<br>
-		println();<br>
-		_delay_ms(2000); <br>
-	}<br>
-}<br>		
+>#include <avr/io.h><br>
+>#include <util/delay.h><br>
+>#include "USART.h"						// customized for ATmega328P<br>
+>
+>int main(void) {<br>
+>	USART_Init();						// USART initialization for 9600 baud, ATmega328<br>
+>	print("Hello world\n");				// "Hello world" - String["..."], '\0' automatically added<br>
+>	   
+>	while (1) {<br>
+>		char char_Value = 'a';				// the single character 'a'<br>
+>		print(char_Value);<br>
+>		println();							// just a linefeed<br>
+>											// C-char string terminated with '\0'<br>
+>		char msg1[6] = {'o', 'k', 'a', 'y', '\r', '\0'};<br>
+>		print(msg1);<br>
+>		println();<br>
+>		
+>		int int_Value = -32767;				// int16_t - signed number from -32768 to 32767<br>
+>		print(int_Value);<br>
+>		println();<br>
+>		_delay_ms(2000); <br>
+>	}<br>
+>}<br>		
 ___________________________________________________________________________________________________________<br>
 
 **Implemented data types:<br>**
