@@ -1,4 +1,4 @@
-# Library-Manual
+# Library-Manual<br>
 Like the "Arduino-IDE" MyIDE comes with a folder called "../MyIDE/libraries".<br>
 These subfolders are intended for user-libraries which you create or<br>
 got from other sources.<br>
@@ -7,50 +7,75 @@ The library-files will be automatically included in the compile- and<br>
 link-process.<br>
 
 **USART Library**<br>
-I developped this library in order to make debugging easier.
-I followed some ideas from the Arduino-library.
+I developped this library in order to make debugging easier.<br>
+I followed some ideas from the Arduino-library.<br>
 
-// USART functions
-void USART_Init(void);
-unsigned char USART_Receive_Chr( void );
-unsigned char USART_Receive( void );
-void USART_Transmit( unsigned char );
-void USART_Putstring( char* );
-void USART_Getstring( char*, uint8_t );
-bool USART_Available();
-void USART_Flush();
+**USART functions<br>**
+* void USART_Init(void);<br>
+* unsigned char USART_Receive_Chr( void );<br>
+* unsigned char USART_Receive( void );<br>
+* void USART_Transmit( unsigned char );<br>
+* void USART_Putstring( char* );<br>
+* void USART_Getstring( char*, uint8_t );<br>
+* bool USART_Available();<br>
+* void USART_Flush();<br>
 
-// New Arduino functions
-void print(int);
-void print(unsigned int);
-void printNumber(unsigned long);
-void print(long);
-void print(unsigned long);
-void printFloat(double);
-void print(double);
-void print(float);
-void print(char*);
-void print(char);
+**New print functions<br>**
+* void print(int);<br>
+* void print(unsigned int);<br>
+* void printNumber(unsigned long);<br>
+* void print(long);<br>
+* void print(unsigned long);<br>
+* void printFloat(double);<br>
+* void print(double);<br>
+* void print(float);<br>
+* void print(char*);<br>
+* void print(char);<br>
+* void println();<br>
 
-void println();
-	
+**Example<br>**
+___________________________________________________________________________________________________________<br>
+#include <avr/io.h><br>
+#include <util/delay.h><br>
+#include "USART.h"						// customized for ATmega328P<br>
 
-Implemented data types
-Copied from https://learn.sparkfun.com/tutorials/data-types-in-arduino/all
+int main(void) {<br>
+	USART_Init();						// USART initialization for 9600 baud, ATmega328<br>
+	print("Hello world\n");				// "Hello world" - String["..."], '\0' automatically added<br>
+	   
+	while (1) {<br>
+		char char_Value = 'a';				// the single character 'a'<br>
+		print(char_Value);<br>
+		println();							// just a linefeed<br>
+											// C-char string terminated with '\0'<br>
+		char msg1[6] = {'o', 'k', 'a', 'y', '\r', '\0'};<br>
+		print(msg1);<br>
+		println();<br>
+		
+		int int_Value = -32767;				// int16_t - signed number from -32768 to 32767<br>
+		print(int_Value);<br>
+		println();<br>
+		_delay_ms(2000); <br>
+	}<br>
+}<br>		
+___________________________________________________________________________________________________________<br>
 
-boolean (8 bit)        int8_t    - simple logical true/false 1/0
-byte (8 bit)           int8_t    - unsigned number from 0-255
-char (8 bit)           int8_t    - signed number from -128 to 127. 
-unsigned char (8 bit)  uint8_t   - unsigned number from 0-255
-word (16 bit)          uint16_t  - unsigned number from 0-65535
+**Implemented data types:<br>**
+Derived from https://learn.sparkfun.com/tutorials/data-types-in-arduino/all<br>
 
-int (16 bit)           int16_t  - signed number from -32768 to 32767.
-unsigned int (16 bit)  uint16_t - unsigned number from 0-65535 
+bool (8 bit)           int8_t    - simple logical true/false 1/0<br>
+char (8 bit)           int8_t    - signed number from -128 to 127. <br>
+unsigned char (8 bit)  uint8_t   - unsigned number from 0-255<br>
 
-long (32 bit)          int32_t  - signed number from -2,147,483,648 to 2,147,483,647
-unsigned long (32 bit) uint32_t - unsigned number from 0-4,294,967,295.
+int (16 bit)           int16_t  - signed number from -32768 to 32767.<br>
+unsigned int (16 bit)  uint16_t - unsigned number from 0-65535<br> 
 
-float (32 bit)                  - signed number from -3.4028235E38 to 3.4028235E38. 
+long (32 bit)          int32_t  - signed number from -2,147,483,648 to 2,147,483,647<br>
+unsigned long (32 bit) uint32_t - unsigned number from 0-4,294,967,295.<br>
+
+float (32 bit)                  - signed number from -3.4028235E38 to 3.4028235E38.<br>
+								- numbers can't be printed<br>
+double 							- same as float<br> 
 
 
 
