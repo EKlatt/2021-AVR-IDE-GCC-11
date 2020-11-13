@@ -1,0 +1,286 @@
+# This "makefile" named "makefile.master" is fundamental for MyIDE
+# Developped from Enno Klatt in 2020
+
+# The target-file generates "myApp.hex"
+# Choose a name as you want!
+TARGET := myApp
+
+# Must be declared because we are crosscompiling
+MCU    := atmega328p
+F_CPU  := 16000000
+
+# Flash options
+AVRDUDE_PROGRAMMER   := arduino
+AVRDUDE_BAUD         := 115200
+AVRDUDE_PORT         := com4
+
+# Paths to toolchain and UnxUtils
+# PNP is the path to notepad++.exe given as a parameter of make.exe
+# "compile" is s make-option
+# e.g. "$(PNPath)../toolchain/bin/make PNP=$(PNPath) compile"
+PNP        := .
+BINARIES   := $(PNP)../toolchain/bin
+UTILS      := $(PNP)../utils
+
+# Making UnxUtils like "ls.exe" visible to make.exe
+# You need to use ":=" to expand the Windows-PATH and 
+# A changed PATH will exist in environment of make.exe
+PATH := $(UTILS);$(PATH)
+
+# Directory to look for archive-files
+# This file: "core.a" is needed for linking
+ARCH     := $(PNP)../archives
+LOADLIBS = $(ARCH)/core.a
+
+# If you want to add additional archives
+# LOADLIBS += $(PNP)../archives/yourlib.a
+
+# Path to include *.h files
+INCLUDE_DIR := $(PNP)../libraries
+
+# Path to object-files o-files of precompiled user libraries
+# e.g. precompiled files like USART.o or lcd.o
+# located in a subdirectory like "../libraries/lcd"
+OBJFILES := $(PNP)../libraries
+
+# The compiler needs to know the locations of non-system header-files
+# Location of headerfiles like USART.h or lcd.h
+# e.g. located in a subdirectory like "../libraries/lcd"
+	# Version 1
+	# Add in source code #include "lcd/lcd.h"
+	# Without environment variable CPATH
+	# INCLUDE := $(addprefix -I ,$(INCLUDE_DIR))
+
+	# Version 2
+	# Add in source code #include "lcd.h"
+	# INCLUDE := $(addprefix -I, $(wildcard ../libraries/*))
+
+	# Version 3 as alternative to Version 2
+	# Add in source code #include "lcd.h"
+	# With environment variable CPATH
+	# The separator in windows needs to be ";" instead of ":"
+	# e.g. export CPATH := ../libraries/USART;../libraries/lcd
+	# In Windows "export" is needed to make CPATH visible for avr-gcc.exe
+	# Throw away unwanted spaces created from wilcard-function
+EMPTY :=
+SPACE := $(EMPTY) $(EMPTY)
+# export CPATH := $(subst $(SPACE),;,$(wildcard ../libraries/*))
+export CPATH := $(subst $(SPACE),;,$(wildcard $(INCLUDE_DIR)/*))
+
+# Directory to store files of build process
+DEBDIR = Debug
+
+# Comment out if needed
+# If you want to add library-files manually
+# The name of the archice needs to be liblcd.a
+# But "liblcd.a" must be specified as "-l lcd"
+# without prefix "lib" and extension "a"
+# LOADLIBS += -L$(ARCH) -l lcd
+
+# If you run "make all", a library "core.a" will be build in "../archives"
+# A archive "core.a" from manual added libraries in "../libraries" will be generated.
+# "core.a" is essential for linking
+# Will be deleted with "make clean"
+ARCHF  = $(wildcard $(OBJFILES)/*/*.o) 
+
+# ================== Nothing needs to be changed below =======================
+
+# Program source files (not including external libraries)
+# Automatically collect C-source files
+SRC = $(wildcard *.c) 
+
+# Automatically collect C++-source files
+CPPSRC = $(wildcard *.cpp) 
+
+# Automatically collect Assembler-source files
+# Make them always end in  "S"
+ASRC = $(wildcard *.S) 
+
+# Define programs and commands
+# In an windows environment SHELL has no funtion
+# If nothing specified make takes build in Windows-commands
+# You need to use e.g. "ver" instead of "VER" (case sensitive)
+SHELL     = cmd.exe
+CC        = $(BINARIES)/avr-gcc-10.1.0
+CCXX      = $(BINARIES)/avr-g++
+OBJCOPY   = $(BINARIES)/avr-objcopy
+OBJDUMP   = $(BINARIES)/avr-objdump
+SIZE      = $(BINARIES)/avr-size
+AR        = $(BINARIES)/avr-gcc-ar rcs
+NM        = $(BINARIES)/avr-nm
+AVRDUDE   = $(BINARIES)/avrdude
+REMOVE    = rm -f
+REMOVEDIR = rm -rf		
+
+#------- Options for compiling, linking...----------------
+# Compiling
+	# The MMD flag creates the dependency files for each source-file
+	# flto standard link-time optimizer during compile and link
+CXXFLAGS   = -g -Os -Wall -Wextra 
+CXXFLAGS  += -std=gnu++11
+CXXFLAGS  += -fpermissive -fno-exceptions 
+CXXFLAGS  += -ffunction-sections -fdata-sections -fno-threadsafe-statics
+CXXFLAGS  += -Wno-error=narrowing
+CXXFLAGS  += -MMD
+CXXFLAGS  += -flto
+
+CFLAGS    = -g -Os -Wall -Wextra
+CFLAGS   += -std=gnu11 
+CFLAGS   += -ffunction-sections -fdata-sections
+CFLAGS   += -MMD
+CFLAGS   += -flto 
+CFLAGS   += -fno-fat-lto-objects
+
+ASFLAGS   = -g -x assembler-with-cpp -Wall -Wextra 
+ASFLAGS  += -MMD
+ASFLAGS  += -flto
+ 
+CXXDEFS   = -DF_CPU=$(F_CPU)L
+CDEFS     = -DF_CPU=$(F_CPU)L
+ADEFS     = -DF_CPU=$(F_CPU)
+
+# Linking, creating elf
+LDFLAGS    = -g -Os -Wall -flto -fuse-linker-plugin -Wl,--gc-sections
+LDFLAGS   += -Wl,-Map=$(DEBDIR)/$(TARGET).map,--cref
+MATH_LIB   = -lm
+
+# Flashing/Programming Arduino Flags
+AVRDUDE_WRITE_FLASH  = -U flash:w:$(TARGET).hex:i
+AVRDUDE_WRITE_EEPROM = -U eeprom:w:$(TARGET).eep
+
+# Output format Intel Hexformat
+FORMAT = ihex
+
+#================= Begin of makefile actions ==============
+# Define all object files.
+OBJ =$(SRC:%.c=$(DEBDIR)/%.o) $(CPPSRC:%.cpp=$(DEBDIR)/%.o) $(ASRC:%.S=$(DEBDIR)/%.o) 
+
+# Define all listing files.
+LST =$(SRC:%.c=$(DEBDIR)/%.lst) $(CPPSRC:%.cpp=$(DEBDIR)/%.lst) $(ASRC:%.S=$(DEBDIR)/%.lst)
+
+all     : archive prints elf hex eep lss sym size
+archive : $(ARCH)/core.a
+elf     : $(TARGET).elf
+hex     : $(TARGET).hex
+eep     : $(TARGET).eep
+lss     : $(TARGET).lss
+sym     : $(TARGET).sym
+
+# Define & include dependency files
+DEPS := $(OBJ:.o=.d)
+-include $(DEPS)
+
+prints :
+	@echo --------------------------
+	@ver
+	@echo --------------------------
+	@echo PNP:       $(PNP)
+	@echo TOOLCHAIN: $(BINARIES)
+	@echo UnxUtils:  $(UTILS)	
+	@echo ------- Sources ----------
+	@echo CPPSRC:    $(CPPSRC)
+	@echo SRC:       $(SRC)
+	@echo ASRC:      $(ASRC)
+	@echo ------- Include ----------	
+	@echo INCLUDE:   $(INCLUDE)
+	@echo CPATH:     $(CPATH)
+	@echo ------- Object files -----	
+	@echo OBJ:       $(OBJ)
+	@echo ------- Dependencies ----- 
+	@echo DEPS:      $(DEPS)
+	@echo -------- Archive ---------
+	@echo ARCHF:     $(ARCHF)	
+	@echo --------- End ------------
+
+# Create archive from object files.
+$(ARCH)/core.a: $(ARCHF)
+	@echo .
+	@echo Create archive $@
+	$(AR) $@ $(ARCHF)
+
+%.hex : %.elf
+	@echo .	
+	@echo -- Step .elf to .hex --
+	@echo -- $< to $@ --
+	$(OBJCOPY) -O $(FORMAT) -R .eeprom $< $@
+	
+%.eep: %.elf
+	@echo .	
+	@echo -- Step .elf to .eep --
+	@echo -- $< to $@ --
+	-$(OBJCOPY) -j .eeprom --set-section-flags=.eeprom="alloc,load" \
+        --change-section-lma .eeprom=0 --no-change-warnings -O $(FORMAT) $< $@ || exit 0	
+
+# Create extended listing file from ELF output file
+%.lss: %.elf
+	@echo .
+	@echo -- Extended listing file -- 
+	@echo -- $< nach $@ --
+	$(OBJDUMP) -h -S -z $< > $(DEBDIR)/$@	
+	
+# Create a symbol table from ELF output file.
+%.sym: %.elf
+	@echo .
+	@echo -- Symbol table -- 
+	@echo -- $< nach $@ --
+	$(NM) -n $< > $(DEBDIR)/$@
+
+# define general rule to link .elf from .o
+# ELF Production File Format
+.SECONDARY : $(TARGET).elf
+.PRECIOUS : $(OBJ)
+%.elf : $(OBJ)
+	@echo .
+	@echo -- Step link --
+	@echo -- $< nach $@ --
+	$(CC) $(LDFLAGS) -mmcu=$(MCU) -o $@ $^ $(LOADLIBS) $(MATH_LIB)
+
+# define general rule to compile .cpp to .o
+$(DEBDIR)/%.o : %.cpp
+	@echo .
+	@echo -- Step compile C++ -- 
+	@echo -- $< nach $@ --
+	$(CCXX) -c $(CXXFLAGS) -mmcu=$(MCU) $(CXXDEFS) $(INCLUDE) $< -o $@
+
+# Compile: create object files from C source files.
+$(DEBDIR)/%.o : %.c
+	@echo .
+	@echo -- Step compile C -- 
+	@echo -- $< nach $@ --
+	$(CC) -c $(CFLAGS) -mmcu=$(MCU) $(CDEFS) $(INCLUDE) $< -o $@
+	
+# Compile: create object files from S source files.
+$(DEBDIR)/%.o : %.S
+	@echo .
+	@echo -- Step compile S-file -- 
+	@echo -- $< nach $@ --
+	$(CC) -c $(ASFLAGS) -mmcu=$(MCU) $(ADEFS) $(INCLUDE)$< -o $@ $(ASLST)
+	@echo .	
+
+# Display compiler version information.
+gccversion :
+	@$(CC) --version		
+
+# Display size of elf-file
+size :
+	@echo .	
+	@echo -- Size Information ---
+	@echo from $(TARGET).elf
+	$(BINARIES)/avr-size -B $(TARGET).elf	
+
+program : archive $(TARGET).hex 
+	$(AVRDUDE) -C $(AVRDUDE).conf -v -p $(MCU)  -c $(AVRDUDE_PROGRAMMER) -P $(AVRDUDE_PORT) -b $(AVRDUDE_BAUD) -D $(AVRDUDE_WRITE_FLASH)
+ 
+.PHONY: prints clean
+clean:
+	@echo Removing files and folders
+	$(REMOVEDIR) ./$(DEBDIR)
+	$(REMOVE) $(TARGET).hex
+	$(REMOVE) $(TARGET).eep
+	$(REMOVE) $(TARGET).elf
+	$(REMOVE) err.txt
+	$(REMOVE) $(LOADLIBS)
+
+# Create object files directory
+$(shell mkdir $(DEBDIR))
+	
