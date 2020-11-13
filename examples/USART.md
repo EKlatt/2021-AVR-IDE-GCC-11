@@ -37,7 +37,7 @@ I followed some ideas from the Arduino-library.<br>
 <p>________________________________________________________________________________________________________<br>
 #include &lt;avr/io.h&gt;<br>
 #include &lt;util/delay.h&gt;<br>
-#include "USART.h"&ensp;&ensp;&ensp;// customized for ATmega328P<br>
+#include "USART.h"&ensp;&ensp;&ensp;&ensp;// customized for ATmega328P<br>
 
 int main(void) {<br>
 	USART_Init();&emsp;&ensp;// USART initialization for 9600 baud, ATmega328<br>
