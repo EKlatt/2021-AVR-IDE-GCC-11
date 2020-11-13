@@ -1,7 +1,7 @@
 ## Installation of MyIDE:<br>
 * You may download the ready to use Beta-release 
 * Creating your own version. Follow the instructions below.<br>
-After downloading "New-WINAVR-master.zip" unzip it.<br>
+After downloading "2020-AVR-Arduino-IDE-main.zip" unzip it.<br>
 Paste the downloaded folder where ether you want.<br>
 Rename it to e.g. MyIDE.<br>
 * Download and install the toolchain into folder "toolchain":
