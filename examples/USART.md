@@ -35,8 +35,8 @@ I followed some ideas from the Arduino-library.<br>
 
 **Example<br>**
 <p>________________________________________________________________________________________________________<br>
-#include <avr/io.h><br>
-#include <util/delay.h><br>
+#include &lt;avr/io.h&gt;<br>
+#include &lt;util/delay.h&gt;<br>
 #include "USART.h"						// customized for ATmega328P<br>
 
 int main(void) {<br>
