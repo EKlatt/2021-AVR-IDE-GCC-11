@@ -47,7 +47,7 @@ int main(void) {<br>
 &emsp;char char_Value = 'a';&emsp;&emsp;// the single character 'a'<br>
 &emsp;print(char_Value);<br>
 &emsp;println();&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;// just a linefeed<br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;// C-char string terminated with '\0'<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;// C-char string terminated with '\0'<br>
 &emsp;char msg1[6] = {'o', 'k', 'a', 'y', '\r', '\0'};<br>
 &emsp;print(msg1);<br>
 &emsp;println();<br>
