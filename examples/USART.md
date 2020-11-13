@@ -40,19 +40,19 @@ I followed some ideas from the Arduino-library.<br>
 #include "USART.h"&ensp;&ensp;&ensp;&ensp;// customized for ATmega328P<br>
 
 int main(void) {<br>
-&emsp;USART_Init();&emsp;&ensp;// USART initialization for 9600 baud, ATmega328<br>
+&emsp;USART_Init();&emsp;&emsp;&emsp;// USART initialization for 9600 baud, ATmega328<br>
 &emsp;print("Hello world\n");&emsp;// "Hello world" - String["..."], '\0' automatically added<br>
 <br>	   
 	while (1) {<br>
-&emsp;char char_Value = 'a';&emsp;// the single character 'a'<br>
+&emsp;char char_Value = 'a';&emsp;&emsp;// the single character 'a'<br>
 &emsp;print(char_Value);<br>
-&emsp;println();&emsp;&emsp;&ensp;// just a linefeed<br>
-&emsp;&emsp;&emsp;&ensp;// C-char string terminated with '\0'<br>
+&emsp;println();&emsp;&emsp;&emsp;&emsp;// just a linefeed<br>
+&emsp;&emsp;&emsp;&emsp;// C-char string terminated with '\0'<br>
 &emsp;char msg1[6] = {'o', 'k', 'a', 'y', '\r', '\0'};<br>
 &emsp;print(msg1);<br>
 &emsp;println();<br>
-<br>&ensp;
-&emsp;int int_Value = -32767;&emsp;&emsp;// int16_t - signed number from -32768 to 32767<br>
+<br>
+&emsp;int int_Value = -32767;&emsp;&emsp;&emsp;// int16_t - signed number from -32768 to 32767<br>
 &emsp;print(int_Value);<br>
 &emsp;println();<br>
 &emsp;_delay_ms(2000); <br>
