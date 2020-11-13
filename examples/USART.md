@@ -42,7 +42,7 @@ ________________________________________________________________________________
 int main(void) {<br>
 	USART_Init();						// USART initialization for 9600 baud, ATmega328<br>
 	print("Hello world\n");				// "Hello world" - String["..."], '\0' automatically added<br>
-	   
+<br>	   
 	while (1) {<br>
 		char char_Value = 'a';				// the single character 'a'<br>
 		print(char_Value);<br>
@@ -51,7 +51,7 @@ int main(void) {<br>
 		char msg1[6] = {'o', 'k', 'a', 'y', '\r', '\0'};<br>
 		print(msg1);<br>
 		println();<br>
-		
+<br>		
 		int int_Value = -32767;				// int16_t - signed number from -32768 to 32767<br>
 		print(int_Value);<br>
 		println();<br>
