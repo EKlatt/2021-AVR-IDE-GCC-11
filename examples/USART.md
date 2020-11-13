@@ -37,25 +37,25 @@ I followed some ideas from the Arduino-library.<br>
 <p>________________________________________________________________________________________________________<br>
 #include &lt;avr/io.h&gt;<br>
 #include &lt;util/delay.h&gt;<br>
-#include "USART.h"						// customized for ATmega328P<br>
+#include "USART.h"&ensp;&ensp;&ensp;// customized for ATmega328P<br>
 
 int main(void) {<br>
-	USART_Init();						// USART initialization for 9600 baud, ATmega328<br>
-	print("Hello world\n");				// "Hello world" - String["..."], '\0' automatically added<br>
+	USART_Init();&emsp;&ensp;// USART initialization for 9600 baud, ATmega328<br>
+	print("Hello world\n");&emsp;// "Hello world" - String["..."], '\0' automatically added<br>
 <br>	   
 	while (1) {<br>
-		char char_Value = 'a';				// the single character 'a'<br>
-		print(char_Value);<br>
-		println();							// just a linefeed<br>
-											// C-char string terminated with '\0'<br>
-		char msg1[6] = {'o', 'k', 'a', 'y', '\r', '\0'};<br>
-		print(msg1);<br>
-		println();<br>
-<br>		
-		int int_Value = -32767;				// int16_t - signed number from -32768 to 32767<br>
-		print(int_Value);<br>
-		println();<br>
-		_delay_ms(2000); <br>
+&ensp;char char_Value = 'a';&emsp;// the single character 'a'<br>
+&ensp;print(char_Value);<br>
+&ensp;println();&emsp;	&ensp;// just a linefeed<br>
+&emsp;&emsp;	&ensp;// C-char string terminated with '\0'<br>
+&ensp;char msg1[6] = {'o', 'k', 'a', 'y', '\r', '\0'};<br>
+&ensp;print(msg1);<br>
+&ensp;println();<br>
+<br>&ensp;
+&ensp;int int_Value = -32767;&emsp;// int16_t - signed number from -32768 to 32767<br>
+&ensp;print(int_Value);<br>
+&ensp;println();<br>
+&ensp;_delay_ms(2000); <br>
 	}<br>
 }<br>		
 </p>
