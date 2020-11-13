@@ -37,7 +37,7 @@ I followed some ideas from the Arduino-library.<br>
 _____________________________________________________________________________________________________<br>
 #include &lt;avr/io.h&gt;<br>
 #include &lt;util/delay.h&gt;<br>
-#include "USART.h"&ensp;&ensp;&ensp;&ensp;// customized for ATmega328P<br>
+#include "USART.h"&ensp;&ensp;&ensp;&ensp;&emsp;// customized for ATmega328P<br>
 
 int main(void) {<br>
 &emsp;USART_Init();&emsp;&emsp;&emsp;&emsp;&emsp;// USART initialization for 9600 baud, ATmega328<br>
@@ -46,8 +46,8 @@ int main(void) {<br>
 &emsp;while (1) {<br>
 &emsp;char char_Value = 'a';&emsp;&emsp;// the single character 'a'<br>
 &emsp;print(char_Value);<br>
-&emsp;println();&emsp;&emsp;&emsp;&emsp;// just a linefeed<br>
-&emsp;&emsp;&emsp;&emsp;// C-char string terminated with '\0'<br>
+&emsp;println();&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;// just a linefeed<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;// C-char string terminated with '\0'<br>
 &emsp;char msg1[6] = {'o', 'k', 'a', 'y', '\r', '\0'};<br>
 &emsp;print(msg1);<br>
 &emsp;println();<br>
