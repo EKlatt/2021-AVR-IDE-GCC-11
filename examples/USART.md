@@ -34,7 +34,7 @@ I followed some ideas from the Arduino-library.<br>
 * void println();<br>
 
 **Example<br>**
-___________________________________________________________________________________________________________<br>
+<pre>___________________________________________________________________________________________________________<br>
 #include <avr/io.h><br>
 #include <util/delay.h><br>
 #include "USART.h"						// customized for ATmega328P<br>
@@ -59,7 +59,7 @@ int main(void) {<br>
 	}<br>
 }<br>		
 ___________________________________________________________________________________________________________<br>
-
+</pre>
 **Implemented data types:<br>**
 Derived from https://learn.sparkfun.com/tutorials/data-types-in-arduino/all<br>
 
