@@ -34,16 +34,16 @@ I followed some ideas from the Arduino-library.<br>
 * void println();<br>
 
 **Example<br>**
-<p>________________________________________________________________________________________________________<br>
+_____________________________________________________________________________________________________<br>
 #include &lt;avr/io.h&gt;<br>
 #include &lt;util/delay.h&gt;<br>
 #include "USART.h"&ensp;&ensp;&ensp;&ensp;// customized for ATmega328P<br>
 
 int main(void) {<br>
-&emsp;USART_Init();&emsp;&emsp;&emsp;// USART initialization for 9600 baud, ATmega328<br>
+&emsp;USART_Init();&emsp;&emsp;&emsp;&emsp;&emsp;// USART initialization for 9600 baud, ATmega328<br>
 &emsp;print("Hello world\n");&emsp;// "Hello world" - String["..."], '\0' automatically added<br>
 <br>	   
-	while (1) {<br>
+&emsp;while (1) {<br>
 &emsp;char char_Value = 'a';&emsp;&emsp;// the single character 'a'<br>
 &emsp;print(char_Value);<br>
 &emsp;println();&emsp;&emsp;&emsp;&emsp;// just a linefeed<br>
@@ -56,9 +56,9 @@ int main(void) {<br>
 &emsp;print(int_Value);<br>
 &emsp;println();<br>
 &emsp;_delay_ms(2000); <br>
-	}<br>
+&emsp;}<br>
 }<br>		
-</p>
+
 **Implemented data types:<br>**
 Derived from https://learn.sparkfun.com/tutorials/data-types-in-arduino/all<br>
 
