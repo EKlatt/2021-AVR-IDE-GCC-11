@@ -1,11 +1,10 @@
 #include <avr/io.h>
 
 #ifndef F_CPU
-	#define F_CPU 12000000UL
+	#define F_CPU 16000000UL
 #endif
 
 #include <util/delay.h>
-
 #include "myutils.h"
 
 #ifndef _LCD_H
@@ -18,14 +17,16 @@
 
 #define LCD_DATA C			//Port PC0-PC3 are connected to D4-D7
 
-#define LCD_E D 			//Enable OR strobe signal
-#define LCD_E_POS	PD7		//Position of enable in above port
+#define LCD_E B 			//Enable OR strobe signal
+#define LCD_E_POS	PB0		//Position of enable in above port
 
-#define LCD_RS D	
-#define LCD_RS_POS 	PD6
+#define LCD_RW B
+#define LCD_RW_POS 	PB1
 
-#define LCD_RW D
-#define LCD_RW_POS 	PD5
+#define LCD_RS B	
+#define LCD_RS_POS 	PB2
+
+
 
 
 //************************************************
