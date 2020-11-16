@@ -10,6 +10,10 @@ link-process.<br>
 I developped this library in order to make debugging easier.<br>
 I followed some ideas from the Arduino-library.<br>
 
+**C++ & Arduino compatibility
+> This libray can not used in C-language, because I used<br>
+> overwriting of functions which is a feature of C++<br>
+
 **USART functions<br>**
 * void USART_Init(void);<br>
 * unsigned char USART_Receive_Chr( void );<br>
