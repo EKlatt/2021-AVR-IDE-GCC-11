@@ -18,7 +18,7 @@
 */
 // Altered connections to "LCD.pdef"
 // Idea: Leaving digital PINs PD2 to PD7 and PB3 to PB5 unused
-//       Leaving analog PINs A4/PC4 and A5/PC4 unused
+//       Leaving analog PINs A4/PC4 and A5/PC5 unused
 /*
  * Data lines to A0 to A3 or PORTC PC0 to PC3
  * LCD Pin  7 DB0  ----> Arduino/ATmega Pin A0 PC0
