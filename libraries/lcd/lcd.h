@@ -1,87 +1,45 @@
-#include <avr/io.h>
+// LCD 16x2 4 bit customized for ATmega328
+// see info.txt
 
 #ifndef F_CPU
-	#define F_CPU 16000000UL
+	#define F_CPU 16000000		// CPU frequency for delay function
 #endif
-
-#include <util/delay.h>
-#include "myutils.h"
 
 #ifndef _LCD_H
 #define _LCD_H
-/*_________________________________________________________________________________________*/
 
-/************************************************
-	LCD CONNECTIONS
-*************************************************/
+// prototype LCD functions
+// send-functions 
+void pulseEnableLine();				// send enable pulse
+void write4bits( uint8_t data);		// send 4-bits to LCD
+void byte_to_nibble(uint8_t data); 	// split byte into higher and lower nibble
+void lcd_data( uint8_t data );		// switch to data-mode
+void lcd_command( uint8_t data ); 	// switch to command-mode
 
-#define LCD_DATA C			//Port PC0-PC3 are connected to D4-D7
+// LCD-functions
+										// LCD initialize function
+void lcd_init( volatile uint8_t* _LCD_PORT_RS_EN, uint8_t _LCD_RS, uint8_t _LCD_EN, 
+				volatile uint8_t* _LCD_PORT,       uint8_t _DB4, uint8_t _DB5, uint8_t _DB6, uint8_t _DB7);
+void lcd_clear();						// function clear display
+void lcd_home( void );					// funcion home cursor
+void lcd_display_on( void );			// display on 0000 1 D=1 C B
+void lcd_display_off( void );			// display off 0000 1 D=0 C B
+void lcd_cursor_on( void );				// cursor on 0000 1 D C=1 B 
+void lcd_cursor_off( void );			// cursor off 0000 1 D C=0 B 
+void lcd_blink_on( void );				// blink on 0000 1 D C B=1 
+void lcd_blink_off( void );				// blink off 0000 1 D C B=0 
+void lcd_autoscroll_on( void );			// display moves, cursor still: 0000 0 1 I/D S=1 
+void lcd_autoscroll_off( void );		// display still, cursor moves: 0000 0 1 I/D S=0 
+void lcd_leftToRight( void );			// cursor left to right: 0000 0 1 I/D=1 S
+void lcd_rightToLeft( void );			// cursor right to left: 0000 0 1 I/D=0 S=0 
+void lcd_scrollDisplayLeft( void );		//  scroll the display: 000 1 S/C=1 R/L=0 x x 	
+void lcd_scrollDisplayRight( void );	//  scroll the display: 000 1 S/C=1 R/L=1 x x 
+void lcd_setcursor( uint8_t x, uint8_t y );	// set cursor to line y (0 or 1); column x 
 
-#define LCD_E B 			//Enable OR strobe signal
-#define LCD_E_POS	PB0		//Position of enable in above port
-
-#define LCD_RW B
-#define LCD_RW_POS 	PB1
-
-#define LCD_RS B	
-#define LCD_RS_POS 	PB2
-
-
-
-
-//************************************************
-
-#define LS_BLINK 0B00000001
-#define LS_ULINE 0B00000010
-
-
-/***************************************************
-			F U N C T I O N S
-****************************************************/
-
-void InitLCD(uint8_t style);
-void LCDWriteString(const char *msg);
-void LCDWriteInt(int val,unsigned int field_length);
-void LCDGotoXY(uint8_t x,uint8_t y);
-
-//Low level
-void LCDByte(uint8_t,uint8_t);
-#define LCDCmd(c) (LCDByte(c,0))
-#define LCDData(d) (LCDByte(d,1))
-
-void LCDBusyLoop();
-
-
-/***************************************************
-			F U N C T I O N S     E N D
-****************************************************/
-
-
-/***************************************************
-	M A C R O S
-***************************************************/
-#define LCDClear() LCDCmd(0b00000001)
-#define LCDHome() LCDCmd(0b00000010);
-
-#define LCDWriteStringXY(x,y,msg) {\
- LCDGotoXY(x,y);\
- LCDWriteString(msg);\
-}
-
-#define LCDWriteIntXY(x,y,val,fl) {\
- LCDGotoXY(x,y);\
- LCDWriteInt(val,fl);\
-}
-/***************************************************/
-
-
-
-
-/*_________________________________________________________________________________________*/
-#endif
-
-
-
-
-
-
+// data-functions
+void lcd_char( uint8_t data );									// send single character to LCD
+void lcd_string( const char *data ); 							// send string to LCD
+void lcd_string_xy( uint8_t x, uint8_t y, const char *data );	// send string to LCD cursor x and row y
+void lcd_number( int16_t number);								// send int number to LCD
+void lcd_number_xy( uint8_t x, uint8_t y, int16_t number );		// send int number to LCD cursor x and row y
+#endif  
