@@ -58,7 +58,7 @@ Below the MyIDE main folder needs to be the following subfolders: <br>
  <tr>
   <td>&nbsp;</td>
   <td>core.a</td>
-  <td>   + -- lcd</td>
+  <td>   + -- LCD</td>
   <td>makefile.master</td>
   <td>   + -- clips</td>
   <td>   + -- avr</td>
@@ -318,7 +318,7 @@ Hence follow this structure:<br>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>lcd ---</td>
+  <td>LCD ---</td>
   <td>+</td>
   <td>USART ---</td>
   <td>+</td>
@@ -337,7 +337,7 @@ Hence follow this structure:<br>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>lcd.h</td>
+  <td>LCD.h</td>
   <td>&nbsp;</td>
   <td>USART.h</td>
  </tr>
@@ -346,15 +346,15 @@ Hence follow this structure:<br>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
-  <td>lcd.o</td>
+  <td>LCD.o</td>
   <td>&nbsp;</td>
   <td>USART.o</td>
  </tr>
 </table><br>
 
 **Header file**<br>
-The reference in your source code needs to be **#include "lcd.h"**.<br>
-Notice the above structure, therein the header file "lcd.h" will be<br>
+The reference in your source code needs to be **#include "LCD.h"**.<br>
+Notice the above structure, therein the header file "LCD.h" will be<br>
 scannded for automatically.<br>
 
 **Linking**<br>
