@@ -1,5 +1,8 @@
+// LCD.h
 // LCD 16x2 4 bit customized for ATmega328
 // see info.txt
+
+#include <stdint.h>	
 
 #ifndef F_CPU
 	#define F_CPU 16000000		// CPU frequency for delay function
@@ -9,14 +12,15 @@
 #define _LCD_H
 
 // prototype LCD functions
-// send-functions 
-void pulseEnableLine();				// send enable pulse
-void write4bits( uint8_t data);		// send 4-bits to LCD
-void byte_to_nibble(uint8_t data); 	// split byte into higher and lower nibble
-void lcd_data( uint8_t data );		// switch to data-mode
-void lcd_command( uint8_t data ); 	// switch to command-mode
+// internal send data/command-functions 
+void pulseEnableLine();						// send enable pulse
+void write4bits( uint8_t data);				// send 4-bits to LCD
+void byte_to_nibble(uint8_t data); 			// split byte into higher and lower nibble
+void send_data( uint8_t data );				// switch to data-mode, send one character to LCD
+void send_data_string( const char *data );	// send string to LCD
+void lcd_command( uint8_t data ); 			// switch to command-mode
 
-// LCD-functions
+// LCD-user-functions
 										// LCD initialize function
 void lcd_init( volatile uint8_t* _LCD_PORT_RS_EN, uint8_t _LCD_RS, uint8_t _LCD_EN, 
 				volatile uint8_t* _LCD_PORT,       uint8_t _DB4, uint8_t _DB5, uint8_t _DB6, uint8_t _DB7);
@@ -36,10 +40,4 @@ void lcd_scrollDisplayLeft( void );		//  scroll the display: 000 1 S/C=1 R/L=0 x
 void lcd_scrollDisplayRight( void );	//  scroll the display: 000 1 S/C=1 R/L=1 x x 
 void lcd_setcursor( uint8_t x, uint8_t y );	// set cursor to line y (0 or 1); column x 
 
-// data-functions
-void lcd_char( uint8_t data );									// send single character to LCD
-void lcd_string( const char *data ); 							// send string to LCD
-void lcd_string_xy( uint8_t x, uint8_t y, const char *data );	// send string to LCD cursor x and row y
-void lcd_number( int16_t number);								// send int number to LCD
-void lcd_number_xy( uint8_t x, uint8_t y, int16_t number );		// send int number to LCD cursor x and row y
 #endif  
