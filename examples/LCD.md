@@ -37,8 +37,8 @@ ________________________________________________________________________________
 #include &lt;avr/io.h&gt;<br>
 #include &lt;util/delay.h&gt;<br>
 #include &lt;string.h&gt;<br>
-#include "LCD.h"&ensp;&ensp;&ensp;&ensp;&emsp;// customized for ATmega328P<br>
-#include "LCD_PRINT.h";&ensp;&ensp;&ensp;&ensp;&emsp;// include header for LCD print-functions<br>
+#include "LCD.h"&ensp;&ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;// customized for ATmega328P<br>
+#include "LCD_PRINT.h";&ensp;&ensp;&ensp;&ensp;// include header for LCD print-functions<br>
 
 int main() {<br>
 &emsp;&emsp;// initialize LCD with choosen hardware connections<br>
