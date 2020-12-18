@@ -43,7 +43,7 @@ ________________________________________________________________________________
 int main() {<br>
 &emsp;&emsp;// initialize LCD with choosen hardware connections<br>
 &emsp;&emsp;// notice one port for RS and EN, and one port for data-connections<br>
-&emsp;&emsp;// lcd_init( &ltPORT of RS and EN&gt, &ltRS-pin&gt, &ltEN-pin&gt, &ltPORT of data&gt, &ltDB4-pin&gt, &ltDB5-pin&gt, &ltDB6-pin&gt, &ltDB7-pin&gt)<br>
+&emsp;&emsp;// lcd_init( &lt;PORT of RS and EN&gt;, &lt;RS-pin&gt;, &lt;EN-pin&gt;, &lt;PORT of data&gt;, &lt;DB4-pin&gt;, &lt;DB5-pin&gt;, &lt;DB6-pin&gt;, &lt;DB7-pin&gt;)<br>
 &emsp;&emsp;&emsp;// e.g.<br>
 &emsp;&emsp;&emsp;// notice &PORTB instead of PORTB; because we need the address<br>
 &emsp;&emsp;&emsp;// LCD RS      <-->  PORTB Bit PB0     (RS: 0=data, 1=command)<br>
