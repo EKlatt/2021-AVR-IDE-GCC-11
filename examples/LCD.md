@@ -37,13 +37,13 @@ ________________________________________________________________________________
 #include &lt;avr/io.h&gt;<br>
 #include &lt;util/delay.h&gt;<br>
 #include &lt;string.h&gt;<br>
-#include "LCD.h"&ensp;&ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;// customized for ATmega328P<br>
+#include "LCD.h"&ensp;&ensp;&ensp;&ensp;&emsp;&emsp;&emsp;// customized for ATmega328P<br>
 #include "LCD_PRINT.h";&ensp;&ensp;&ensp;&ensp;// include header for LCD print-functions<br>
 
 int main() {<br>
 &emsp;&emsp;// initialize LCD with choosen hardware connections<br>
 &emsp;&emsp;// notice one port for RS and EN, and one port for data-connections<br>
-&emsp;&emsp;// lcd_init( <PORT of RS and EN>, <RS-pin>, <EN-pin>, <PORT of data>, <DB4-pin>, <DB5-pin>, <DB6-pin>, <DB7-pin>)<br>
+&emsp;&emsp;// lcd_init( &ltPORT of RS and EN&gt, &ltRS-pin&gt, &ltEN-pin&gt, &ltPORT of data&gt, &ltDB4-pin&gt, &ltDB5-pin&gt, &ltDB6-pin&gt, &ltDB7-pin&gt)<br>
 &emsp;&emsp;&emsp;// e.g.<br>
 &emsp;&emsp;&emsp;// notice &PORTB instead of PORTB; because we need the address<br>
 &emsp;&emsp;&emsp;// LCD RS      <-->  PORTB Bit PB0     (RS: 0=data, 1=command)<br>
