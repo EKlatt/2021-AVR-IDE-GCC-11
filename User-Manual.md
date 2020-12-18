@@ -360,7 +360,7 @@ Hence follow this structure:<br>
 
 **Header file**<br>
 The reference in your source code needs to be e.g. **#include "USART.h"**.<br>
-Notice the above structure, therein the header file "LCD.h" will be<br>
+Notice the above structure, therein the header file "USART.h" will be<br>
 scannded for automatically.<br>
 
 **Linking**<br>
