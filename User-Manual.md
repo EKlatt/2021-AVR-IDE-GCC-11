@@ -283,7 +283,13 @@ I decided to use the options from Arduino "platform.txt".<br>
 Like the "Arduino-IDE" MyIDE comes with a folder called "../MyIDE/libraries".<br>
 These subfolders are intended for user-libraries which you create or<br>
 got from other sources.<br>
+I decided to create libraries for use with C++ sources.<br>
+If you want libraries for C, take a look into folder "../MyIDE/libraries_c".<br>
+Save the cpp-library from "../MyIDE/libraries" to "../MyIDE/libraries.cpp".<br>
+Copy the C-library from "../MyIDE/libraries_c" to "../MyIDE/libraries".<br>
+If you want to use a new library, follow these steps:<br>
 Create a subfolder for the user-library and add the *.h and *.o files.<br>
+How are the libraries used from makefile?<br>
 The library-files will be automatically included in the compile- and<br>
 link-process.<br>
 Hence follow this structure:<br>
@@ -353,7 +359,7 @@ Hence follow this structure:<br>
 </table><br>
 
 **Header file**<br>
-The reference in your source code needs to be **#include "LCD.h"**.<br>
+The reference in your source code needs to be e.g. **#include "USART.h"**.<br>
 Notice the above structure, therein the header file "LCD.h" will be<br>
 scannded for automatically.<br>
 
