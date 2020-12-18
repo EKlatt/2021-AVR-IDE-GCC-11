@@ -1,6 +1,6 @@
 ## Installation of MyIDE:<br>
-* You may download the ready to use Beta-release 
-* Creating your own version. Follow the instructions below.<br>
+* You may download the ready to use Beta-release. 
+* Or creating your own version. Follow the instructions below.<br>
 After downloading "2020-AVR-Arduino-IDE-main.zip" unzip it.<br>
 Paste the downloaded folder where ether you want.<br>
 Rename it to e.g. MyIDE.<br>
