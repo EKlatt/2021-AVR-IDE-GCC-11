@@ -10,13 +10,13 @@ link-process.<br>
 I developped this library in order to make debugging easier.<br>
 I followed some ideas from the Arduino-library.<br>
 
-**C++ & Arduino compatibility
+**C++ & Arduino compatibility**
 > This libray can not used in C-language, because I used<br>
 > overwriting of functions which is a feature of C++<br>
 
 **LCD initialize functions<br>**
 * void lcd_init( volatile uint8_t* _LCD_PORT_RS_EN, uint8_t _LCD_RS, uint8_t _LCD_EN,<br> 
-*				 volatile uint8_t* _LCD_PORT,       uint8_t _DB4, uint8_t _DB5, uint8_t _DB6, uint8_t _DB7);<br>
+				 volatile uint8_t* _LCD_PORT,       uint8_t _DB4, uint8_t _DB5, uint8_t _DB6, uint8_t _DB7);<br>
 
 
 **New print number functions<br>**
