@@ -11,9 +11,5 @@
 // https://rn-wissen.de/wiki/index.php/LCD-Modul_am_AVR
 // https://www.mikrocontroller.net/articles/AVR-GCC-Tutorial/LCD-Ansteuerung
 // https://www.mikrocontroller.net/articles/Erweiterte_LCD-Ansteuerung
-// https://www.mikrocontroller.net/articles/HD44780
 // http://www.sprut.de/electronic/lcd/
 // https://www.ulrichradig.de/home/index.php/avr/lc-display
-// http://www.peterfleury.epizy.com/avr-software.html
-// http://www.peterfleury.epizy.com/doxygen/avr-gcc-libraries/group__pfleury__ic2master.html
-// http://www.ne555.at/2014/index.php/atmel-avr-mikrocontrollertechnik/382-lcd-display-ansteuern.html
