@@ -114,17 +114,17 @@ Derived from https://learn.sparkfun.com/tutorials/data-types-in-arduino/all<br>
 
 bool (8 bit)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;int8_t    - simple logical true/false 1/0<br>
 char (8 bit)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;int8_t    - signed number from -128 to 127. <br>
-unsigned char (8 bit)&emsp;uint8_t   - unsigned number from 0-255<br>
+unsigned char (8 bit)&emsp;&emsp;uint8_t   - unsigned number from 0-255<br>
 
 int (16 bit)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;int16_t  - signed number from -32768 to 32767.<br>
-unsigned int (16 bit)&emsp;uint16_t - unsigned number from 0-65535<br> 
+unsigned int (16 bit)&emsp;&emsp;uint16_t - unsigned number from 0-65535<br> 
 
-long (32 bit)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;int32_t  - signed number from -2,147,483,648 to 2,147,483,647<br>
-unsigned long (32 bit)&emsp;uint32_t - unsigned number from 0-4,294,967,295.<br>
+long (32 bit)&emsp;&emsp;&emsp;&emsp;&emsp;int32_t  - signed number from -2,147,483,648 to 2,147,483,647<br>
+unsigned long (32 bit)&emsp;&emsp;uint32_t - unsigned number from 0-4,294,967,295.<br>
 
 float (32 bit)&emsp;&emsp;&emsp;&emsp;&emsp;- signed number from -3.4028235E38 to 3.4028235E38.<br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- numbers can't be printed<br>
-double&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- same as float<br> 
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- numbers can't be printed<br>
+double&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- same as float<br> 
 
 
 
