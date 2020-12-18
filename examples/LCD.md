@@ -41,90 +41,90 @@ ________________________________________________________________________________
 #include "LCD_PRINT.h";&ensp;&ensp;&ensp;&ensp;&emsp;// include header for LCD print-functions<br>
 
 int main() {<br>
-&emsp;&emsp;	// initialize LCD with choosen hardware connections<br>
-&emsp;&emsp;	// notice one port for RS and EN, and one port for data-connections<br>
-&emsp;&emsp;	// lcd_init( <PORT of RS and EN>, <RS-pin>, <EN-pin>, <PORT of data>, <DB4-pin>, <DB5-pin>, <DB6-pin>, <DB7-pin>)<br>
-&emsp;&emsp;		// e.g.<br>
-&emsp;&emsp;		// notice &PORTB instead of PORTB; because we need the address<br>
-&emsp;&emsp;		// LCD RS      <-->  PORTB Bit PB0     (RS: 0=data, 1=command)<br>
-&emsp;&emsp;		// LCD EN      <-->  PORTB Bit PB1     (EN: 1-impuls for data ready)<br>
-&emsp;&emsp;		// notice &PORTC instead of PORTC; because we need the address<br>
-&emsp;&emsp;		// LCD DB4     <-->  PORTC Bit PC2<br>
-&emsp;&emsp;		// LCD DB5     <-->  PORTC Bit PC3<br>		
-&emsp;&emsp;		// LCD DB6     <-->  PORTC Bit PC4<br>		
-&emsp;&emsp;		// LCD DB7     <-->  PORTC Bit PC5<br>	
-	<br>
-&emsp;	lcd_init( &PORTB, PB0, PB1, &PORTC, PC2, PC3, PC4, PC5);<br>
-	<br>
-&emsp;	lcd_print('X');<br>	
-&emsp;	_delay_ms(2000);<br>
-	<br>
-&emsp;	lcd_clear();<br>
-&emsp;	char str[24];<br>
-&emsp;	strcpy(str, "Hello world");<br>
-&emsp;	lcd_print(str);<br>	
-&emsp;	_delay_ms(2000);<br>
-	<br>
-&emsp;	lcd_clear();<br>
-&emsp;	strcpy(str, "Integer");<br>
-&emsp;	lcd_print(str);<br>
-&emsp;	lcd_setcursor(0,1);<br>
-&emsp;	lcd_print(-32767);<br>
-&emsp;	_delay_ms(2000);<br>
-	<br>
-&emsp;	lcd_clear();<br>
-&emsp;	strcpy(str, "unsigned Integer");<br>		
-&emsp;	lcd_print(str);<br>
-&emsp;	lcd_setcursor(0,1);<br>
-&emsp;	lcd_print(65535U);<br>
-&emsp;	_delay_ms(2000);<br>
-	<br>
-&emsp;	lcd_clear();<br>
-&emsp;	strcpy(str, "long");<br>	
-&emsp;	lcd_print(str);<br>
-&emsp;	lcd_setcursor(0,1);<br>
-&emsp;	lcd_print(-2147483647);<br>		
-&emsp;	_delay_ms(2000);<br>
-	<br>
-&emsp;	lcd_clear();<br>
-&emsp;	strcpy(str, "unsigned long");<br>			
-&emsp;	lcd_print(str);<br>
-&emsp;	lcd_setcursor(0,1);<br>
-&emsp;	lcd_print(4294967295UL);<br>		
-&emsp;	_delay_ms(2000);<br>
-	<br>
-&emsp;	lcd_clear();<br>
-&emsp;	strcpy(str, "double");<br>			
-&emsp;	lcd_print(str);<br>
-&emsp;	lcd_setcursor(0,1);<br>
-&emsp;	lcd_print(334567.123);<br>		
-&emsp;	_delay_ms(2000);<br>
-	<br>
-&emsp;	lcd_clear();<br>
-&emsp;	strcpy(str, "Hannover");<br>			
-&emsp;	lcd_print_xy(1, 1, str);<br>
-	<br>
-&emsp;	while(1) {<br>
-&emsp;	}<br>
-&emsp;	return 0;<br>
+&emsp;&emsp;// initialize LCD with choosen hardware connections<br>
+&emsp;&emsp;// notice one port for RS and EN, and one port for data-connections<br>
+&emsp;&emsp;// lcd_init( <PORT of RS and EN>, <RS-pin>, <EN-pin>, <PORT of data>, <DB4-pin>, <DB5-pin>, <DB6-pin>, <DB7-pin>)<br>
+&emsp;&emsp;&emsp;// e.g.<br>
+&emsp;&emsp;&emsp;// notice &PORTB instead of PORTB; because we need the address<br>
+&emsp;&emsp;&emsp;// LCD RS      <-->  PORTB Bit PB0     (RS: 0=data, 1=command)<br>
+&emsp;&emsp;&emsp;// LCD EN      <-->  PORTB Bit PB1     (EN: 1-impuls for data ready)<br>
+&emsp;&emsp;&emsp;// notice &PORTC instead of PORTC; because we need the address<br>
+&emsp;&emsp;&emsp;// LCD DB4     <-->  PORTC Bit PC2<br>
+&emsp;&emsp;&emsp;// LCD DB5     <-->  PORTC Bit PC3<br>		
+&emsp;&emsp;&emsp;// LCD DB6     <-->  PORTC Bit PC4<br>		
+&emsp;&emsp;&emsp;// LCD DB7     <-->  PORTC Bit PC5<br>	
+<br>
+&emsp;lcd_init( &PORTB, PB0, PB1, &PORTC, PC2, PC3, PC4, PC5);<br>
+<br>
+&emsp;lcd_print('X');<br>	
+&emsp;_delay_ms(2000);<br>
+<br>
+&emsp;lcd_clear();<br>
+&emsp;char str[24];<br>
+&emsp;strcpy(str, "Hello world");<br>
+&emsp;lcd_print(str);<br>	
+&emsp;_delay_ms(2000);<br>
+<br>
+&emsp;lcd_clear();<br>
+&emsp;strcpy(str, "Integer");<br>
+&emsp;lcd_print(str);<br>
+&emsp;lcd_setcursor(0,1);<br>
+&emsp;lcd_print(-32767);<br>
+&emsp;_delay_ms(2000);<br>
+<br>
+&emsp;lcd_clear();<br>
+&emsp;strcpy(str, "unsigned Integer");<br>		
+&emsp;lcd_print(str);<br>
+&emsp;lcd_setcursor(0,1);<br>
+&emsp;lcd_print(65535U);<br>
+&emsp;_delay_ms(2000);<br>
+<br>
+&emsp;lcd_clear();<br>
+&emsp;strcpy(str, "long");<br>	
+&emsp;lcd_print(str);<br>
+&emsp;lcd_setcursor(0,1);<br>
+&emsp;lcd_print(-2147483647);<br>		
+&emsp;_delay_ms(2000);<br>
+<br>
+&emsp;lcd_clear();<br>
+&emsp;strcpy(str, "unsigned long");<br>			
+&emsp;lcd_print(str);<br>
+&emsp;lcd_setcursor(0,1);<br>
+&emsp;lcd_print(4294967295UL);<br>		
+&emsp;_delay_ms(2000);<br>
+<br>
+&emsp;lcd_clear();<br>
+&emsp;strcpy(str, "double");<br>			
+&emsp;lcd_print(str);<br>
+&emsp;lcd_setcursor(0,1);<br>
+&emsp;lcd_print(334567.123);<br>		
+&emsp;_delay_ms(2000);<br>
+br>
+&emsp;lcd_clear();<br>
+&emsp;strcpy(str, "Hannover");<br>			
+&emsp;lcd_print_xy(1, 1, str);<br>
+<br>
+&emsp;while(1) {<br>
+&emsp;}<br>
+&emsp;return 0;<br>
 }<br>
 
 **Implemented data types:<br>**
 Derived from https://learn.sparkfun.com/tutorials/data-types-in-arduino/all<br>
 
-bool (8 bit)           int8_t    - simple logical true/false 1/0<br>
-char (8 bit)           int8_t    - signed number from -128 to 127. <br>
-unsigned char (8 bit)  uint8_t   - unsigned number from 0-255<br>
+bool (8 bit)&emsp;           int8_t    - simple logical true/false 1/0<br>
+char (8 bit)&emsp;           int8_t    - signed number from -128 to 127. <br>
+unsigned char (8 bit)&emsp;  uint8_t   - unsigned number from 0-255<br>
 
-int (16 bit)           int16_t  - signed number from -32768 to 32767.<br>
-unsigned int (16 bit)  uint16_t - unsigned number from 0-65535<br> 
+int (16 bit)&emsp;           int16_t  - signed number from -32768 to 32767.<br>
+unsigned int (16 bit)&emsp;  uint16_t - unsigned number from 0-65535<br> 
 
-long (32 bit)          int32_t  - signed number from -2,147,483,648 to 2,147,483,647<br>
-unsigned long (32 bit) uint32_t - unsigned number from 0-4,294,967,295.<br>
+long (32 bit)&emsp;          int32_t  - signed number from -2,147,483,648 to 2,147,483,647<br>
+unsigned long (32 bit)&emsp; uint32_t - unsigned number from 0-4,294,967,295.<br>
 
-float (32 bit)                  - signed number from -3.4028235E38 to 3.4028235E38.<br>
-								- numbers can't be printed<br>
-double 							- same as float<br> 
+float (32 bit)&emsp;                  - signed number from -3.4028235E38 to 3.4028235E38.<br>
+&emsp;								- numbers can't be printed<br>
+double&emsp; 							- same as float<br> 
 
 
 
