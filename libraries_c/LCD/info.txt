@@ -1,0 +1,19 @@
+// LCD 16x2 4 bit customized for ATmega328
+// English:
+// https://www.arduino.cc/en/Reference/LiquidCrystal
+// https://www.engineersgarage.com/knowledge_share/16x2-lcd-working/
+// https://newbiehack.com/MicrocontrollersABeginnersGuideOurFirstLCDProgram.aspx
+// https://www.electronicwings.com/avr-atmega/lcd16x2-interfacing-with-atmega16-32
+// https://extremeelectronics.co.in/avr-tutorials/using-lcd-module-with-avrs/
+// http://www.microcontrollerboard.com/lcd.html
+// https://stackoverflow.com/questions/13704076/passing-a-port-as-a-variable-avr
+// German:
+// https://rn-wissen.de/wiki/index.php/LCD-Modul_am_AVR
+// https://www.mikrocontroller.net/articles/AVR-GCC-Tutorial/LCD-Ansteuerung
+// https://www.mikrocontroller.net/articles/Erweiterte_LCD-Ansteuerung
+// https://www.mikrocontroller.net/articles/HD44780
+// http://www.sprut.de/electronic/lcd/
+// https://www.ulrichradig.de/home/index.php/avr/lc-display
+// http://www.peterfleury.epizy.com/avr-software.html
+// http://www.peterfleury.epizy.com/doxygen/avr-gcc-libraries/group__pfleury__ic2master.html
+// http://www.ne555.at/2014/index.php/atmel-avr-mikrocontrollertechnik/382-lcd-display-ansteuern.html
