@@ -16,10 +16,10 @@ I followed some ideas from the Arduino-library.<br>
 
 **LCD initialize functions<br>**
 * void lcd_init( volatile uint8_t* _LCD_PORT_RS_EN, uint8_t _LCD_RS, uint8_t _LCD_EN,<br> 
-&emsp;&emsp;&emsp;&emsp;&emsp;volatile uint8_t* _LCD_PORT,       uint8_t _DB4, uint8_t _DB5, uint8_t _DB6, uint8_t _DB7);<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;volatile uint8_t* _LCD_PORT, uint8_t _DB4, uint8_t _DB5, uint8_t _DB6, uint8_t _DB7);<br>
 
 
-**New print number functions<br>**
+**New lcd_print number functions<br>**
 * void lcd_print(int);<br>
 * void lcd_print(unsigned int);<br>
 * void lcd_print(long);<br>
@@ -41,18 +41,18 @@ ________________________________________________________________________________
 #include "LCD_PRINT.h";&ensp;&ensp;&ensp;&ensp;&emsp;// include header for LCD print-functions<br>
 
 int main() {<br>
-	// initialize LCD with choosen hardware connections<br>
-	// notice one port for RS and EN, and one port for data-connections<br>
-	// lcd_init( <PORT of RS and EN>, <RS-pin>, <EN-pin>, <PORT of data>, <DB4-pin>, <DB5-pin>, <DB6-pin>, <DB7-pin>)<br>
-		// e.g.<br>
-		// notice &PORTB instead of PORTB; because we need the address<br>
-		// LCD RS      <-->  PORTB Bit PB0     (RS: 0=data, 1=command)<br>
-		// LCD EN      <-->  PORTB Bit PB1     (EN: 1-impuls for data ready)<br>
-		// notice &PORTC instead of PORTC; because we need the address<br>
-		// LCD DB4     <-->  PORTC Bit PC2<br>
-		// LCD DB5     <-->  PORTC Bit PC3<br>		
-		// LCD DB6     <-->  PORTC Bit PC4<br>		
-		// LCD DB7     <-->  PORTC Bit PC5<br>	
+&emsp;&emsp;	// initialize LCD with choosen hardware connections<br>
+&emsp;&emsp;	// notice one port for RS and EN, and one port for data-connections<br>
+&emsp;&emsp;	// lcd_init( <PORT of RS and EN>, <RS-pin>, <EN-pin>, <PORT of data>, <DB4-pin>, <DB5-pin>, <DB6-pin>, <DB7-pin>)<br>
+&emsp;&emsp;		// e.g.<br>
+&emsp;&emsp;		// notice &PORTB instead of PORTB; because we need the address<br>
+&emsp;&emsp;		// LCD RS      <-->  PORTB Bit PB0     (RS: 0=data, 1=command)<br>
+&emsp;&emsp;		// LCD EN      <-->  PORTB Bit PB1     (EN: 1-impuls for data ready)<br>
+&emsp;&emsp;		// notice &PORTC instead of PORTC; because we need the address<br>
+&emsp;&emsp;		// LCD DB4     <-->  PORTC Bit PC2<br>
+&emsp;&emsp;		// LCD DB5     <-->  PORTC Bit PC3<br>		
+&emsp;&emsp;		// LCD DB6     <-->  PORTC Bit PC4<br>		
+&emsp;&emsp;		// LCD DB7     <-->  PORTC Bit PC5<br>	
 	<br>
 &emsp;	lcd_init( &PORTB, PB0, PB1, &PORTC, PC2, PC3, PC4, PC5);<br>
 	<br>
