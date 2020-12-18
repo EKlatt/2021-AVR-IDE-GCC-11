@@ -16,7 +16,7 @@ I followed some ideas from the Arduino-library.<br>
 
 **LCD initialize functions<br>**
 * void lcd_init( volatile uint8_t* _LCD_PORT_RS_EN, uint8_t _LCD_RS, uint8_t _LCD_EN,<br> 
-&emsp;&emsp;volatile uint8_t* _LCD_PORT,       uint8_t _DB4, uint8_t _DB5, uint8_t _DB6, uint8_t _DB7);<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;volatile uint8_t* _LCD_PORT,       uint8_t _DB4, uint8_t _DB5, uint8_t _DB6, uint8_t _DB7);<br>
 
 
 **New print number functions<br>**
