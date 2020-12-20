@@ -62,7 +62,7 @@ void lcd_init( volatile uint8_t* _LCD_PORT_RS_EN, uint8_t _LCD_RS, uint8_t _LCD_
   #include &lt;avr/io.h&gt;<br>
   #include &lt;util/delay.h&gt;<br>
   #include &lt;string.h&gt;<br>
-  #include "LCD.h"&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;// customized for ATmega328P<br>
+  #include "LCD.h"&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;// customized for ATmega328P<br>
   #include "LCD_PRINT.h";&ensp;&ensp;&ensp;&ensp;// include header for LCD print-functions<br>
 
   #include &lt;avr/io.h&gt;<br>
