@@ -14,12 +14,31 @@ I followed some ideas from the Arduino-library.<br>
 > This libray can not used in C-language, because I used<br>
 > overwriting of functions which is a feature of C++<br>
 
-**LCD initialize functions<br>**
-* void lcd_init( volatile uint8_t* _LCD_PORT_RS_EN, uint8_t _LCD_RS, uint8_t _LCD_EN,<br> 
+**LCD initialize functions**<br>
+
+void lcd_init( volatile uint8_t* _LCD_PORT_RS_EN, uint8_t _LCD_RS, uint8_t _LCD_EN,<br>
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;volatile uint8_t* _LCD_PORT, uint8_t _DB4, uint8_t _DB5, uint8_t _DB6, uint8_t _DB7);<br>
 
+| **LCD functions**                           |                                         |
+| ------------------------------------------- | --------------------------------------- |
+| void lcd_clear();                           | clear display                           |
+| void lcd_home( void );                      | home cursor                             |
+| void lcd_display_on( void );                | display on                              |
+| void lcd_display_off( void );               | display off                             |
+| void lcd_cursor_on( void );                 | cursor on                               |
+| void lcd_cursor_off( void );                | cursor off                              |
+| void lcd_blink_on( void );                  | cursor blink on                         |
+| void lcd_blink_off( void );                 | cursor blink off                        |
+| void lcd_autoscroll_on( void );             | display moves, cursor still             |
+| void lcd_autoscroll_off( void );            | display still, cursor moves             |
+| void lcd_leftToRight( void );               | cursor left to right                    |
+| void lcd_rightToLeft( void );               | cursor right to left                    |
+| void lcd_scrollDisplayLeft( void );         | scroll display left                     |
+| void lcd_scrollDisplayRight( void );        | scroll display right                    |
+| void lcd_setcursor( uint8_t x, uint8_t y ); | set cursor to column x, line y (0 or 1) |
 
-**New lcd_print number functions<br>**
+**LCD print number functions**<br>
+
 * void lcd_print(int);<br>
 * void lcd_print(unsigned int);<br>
 * void lcd_print(long);<br>
@@ -29,16 +48,28 @@ I followed some ideas from the Arduino-library.<br>
 
 **New print character functions<br>**
 * void lcd_print(char*);<br>
+
 * void lcd_print(char);<br>
+
 * void lcd_print_xy( uint8_t x, uint8_t y, char *data );<br>
 
-**Example<br>**
-_____________________________________________________________________________________________________<br>
-#include &lt;avr/io.h&gt;<br>
-#include &lt;util/delay.h&gt;<br>
-#include &lt;string.h&gt;<br>
-#include "LCD.h"&ensp;&ensp;&ensp;&ensp;&emsp;&emsp;&emsp;// customized for ATmega328P<br>
-#include "LCD_PRINT.h";&ensp;&ensp;&ensp;&ensp;// include header for LCD print-functions<br>
+  
+
+  **Example<br>**
+
+  ------
+
+  #include &lt;avr/io.h&gt;<br>
+  #include &lt;util/delay.h&gt;<br>
+  #include &lt;string.h&gt;<br>
+  #include "LCD.h"&ensp;&ensp;&ensp;// customized for ATmega328P<br>
+  #include "LCD_PRINT.h";&ensp;&ensp;&ensp;&ensp;// include header for LCD print-functions<br>
+
+  #include &lt;avr/io.h&gt;<br>
+  #include &lt;util/delay.h&gt;<br>
+  #include &lt;string.h&gt;<br>
+  #include "LCD.h"&ensp;&ensp;&ensp;// customized for ATmega328P<br>
+  #include "LCD_PRINT.h";&ensp;&ensp;&ensp;&ensp;// include header for LCD print-functions<br>
 
 int main() {<br>
 &emsp;&emsp;// initialize LCD with choosen hardware connections<br>
@@ -112,19 +143,17 @@ int main() {<br>
 **Implemented data types:<br>**
 Derived from https://learn.sparkfun.com/tutorials/data-types-in-arduino/all<br>
 
-bool (8 bit)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;int8_t    - simple logical true/false 1/0<br>
-char (8 bit)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;int8_t    - signed number from -128 to 127. <br>
-unsigned char (8 bit)&emsp;&emsp;uint8_t   - unsigned number from 0-255<br>
-
-int (16 bit)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;int16_t  - signed number from -32768 to 32767.<br>
-unsigned int (16 bit)&emsp;&emsp;uint16_t - unsigned number from 0-65535<br> 
-
-long (32 bit)&emsp;&emsp;&emsp;&emsp;&emsp;int32_t  - signed number from -2,147,483,648 to 2,147,483,647<br>
-unsigned long (32 bit)&emsp;&emsp;uint32_t - unsigned number from 0-4,294,967,295.<br>
-
-float (32 bit)&emsp;&emsp;&emsp;&emsp;&emsp;- signed number from -3.4028235E38 to 3.4028235E38.<br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- numbers can't be printed<br>
-double&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;- same as float<br> 
+| First Header           | Second Header                                                |
+| :--------------------- | ------------------------------------------------------------ |
+| bool (8 bit)           | int8_t    - simple logical true/false 1/0                    |
+| char (8 bit)           | int8_t    - signed number from -128 to 127                   |
+| unsigned char (8 bit)  | uint8_t   - unsigned number from 0-255                       |
+| int (16 bit)           | int16_t  - signed number from -32768 to 32767                |
+| unsigned int (16 bit)  | uint16_t - unsigned number from 0-65535                      |
+| long (32 bit)          | int32_t  - signed number from -2,147,483,648 to 2,147,483,647 |
+| unsigned long (32 bit) | uint32_t - unsigned number from 0-4,294,967,295              |
+| float (32 bit)         | signed number from -3.4028235E38 to 3.4028235E38             |
+| double                 | same as float                                                |
 
 
 
