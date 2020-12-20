@@ -146,7 +146,7 @@ int main() {<br>
 Derived from https://learn.sparkfun.com/tutorials/data-types-in-arduino/all<br>
 
 | Type                   | Description                                                  |
-| :--------------------- | ------------------------------------------------------------ |
+| :--------------------- | :----------------------------------------------------------- |
 | bool (8 bit)           | int8_t    - simple logical true/false 1/0                    |
 | char (8 bit)           | int8_t    - signed number from -128 to 127                   |
 | unsigned char (8 bit)  | uint8_t   - unsigned number from 0-255                       |
