@@ -20,7 +20,7 @@ void lcd_init( volatile uint8_t* _LCD_PORT_RS_EN, uint8_t _LCD_RS, uint8_t _LCD_
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;volatile uint8_t* _LCD_PORT, uint8_t _DB4, uint8_t _DB5, uint8_t _DB6, uint8_t _DB7);<br>
 
 | **LCD functions**                           |                                         |
-| ------------------------------------------- | --------------------------------------- |
+| :------------------------------------------ | --------------------------------------- |
 | void lcd_clear();                           | clear display                           |
 | void lcd_home( void );                      | home cursor                             |
 | void lcd_display_on( void );                | display on                              |
@@ -68,7 +68,7 @@ void lcd_init( volatile uint8_t* _LCD_PORT_RS_EN, uint8_t _LCD_RS, uint8_t _LCD_
   #include &lt;avr/io.h&gt;<br>
   #include &lt;util/delay.h&gt;<br>
   #include &lt;string.h&gt;<br>
-  #include "LCD.h"&ensp;&ensp;&ensp;// customized for ATmega328P<br>
+  #include "LCD.h"&ensp;&ensp;&ensp;ensp;&ensp;&ensp;// customized for ATmega328P<br>
   #include "LCD_PRINT.h";&ensp;&ensp;&ensp;&ensp;// include header for LCD print-functions<br>
 
 int main() {<br>
