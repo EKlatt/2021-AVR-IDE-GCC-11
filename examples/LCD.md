@@ -140,10 +140,12 @@ int main() {<br>
 &emsp;return 0;<br>
 }<br>
 
+------
+
 **Implemented data types:<br>**
 Derived from https://learn.sparkfun.com/tutorials/data-types-in-arduino/all<br>
 
-| First Header           | Second Header                                                |
+| Type                   | Description                                                  |
 | :--------------------- | ------------------------------------------------------------ |
 | bool (8 bit)           | int8_t    - simple logical true/false 1/0                    |
 | char (8 bit)           | int8_t    - signed number from -128 to 127                   |
