@@ -36,7 +36,7 @@ Hence do not change the structure of MyIDE.<br>
 Below the MyIDE main folder needs to be the following subfolders: <br>
 > archives, libraries, makefile, PNP, toolchain, utils<br>
 
-## Thanks to the developpers! 
+## Thanks to the developers<br>
 I appreciate the work of Zak Kemble and his toolchain:<br>
 https://blog.zakkemble.net/avr-gcc-builds/<br>
 The contents will be find in the folder "..\MyIDE\toolchain".<br>
