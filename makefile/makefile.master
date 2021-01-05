@@ -24,7 +24,7 @@ UTILS      := $(PNP)../utils
 
 # Making UnxUtils like "ls.exe" visible to make.exe
 # You need to use ":=" to expand the Windows-PATH and 
-# A changed PATH will exist in environment of make.exe
+# a changed PATH will exist in environment of make.exe
 PATH := $(UTILS);$(PATH)
 
 # Directory to look for archive-files
@@ -215,14 +215,14 @@ $(ARCH)/core.a: $(ARCHF)
 %.lss: %.elf
 	@echo .
 	@echo -- Extended listing file -- 
-	@echo -- $< nach $@ --
+	@echo -- $< to $@ --
 	$(OBJDUMP) -h -S -z $< > $(DEBDIR)/$@	
 	
 # Create a symbol table from ELF output file.
 %.sym: %.elf
 	@echo .
 	@echo -- Symbol table -- 
-	@echo -- $< nach $@ --
+	@echo -- $< to $@ --
 	$(NM) -n $< > $(DEBDIR)/$@
 
 # define general rule to link .elf from .o
@@ -232,28 +232,28 @@ $(ARCH)/core.a: $(ARCHF)
 %.elf : $(OBJ)
 	@echo .
 	@echo -- Step link --
-	@echo -- $< nach $@ --
+	@echo -- $< to $@ --
 	$(CC) $(LDFLAGS) -mmcu=$(MCU) -o $@ $^ $(LOADLIBS) $(MATH_LIB)
 
 # define general rule to compile .cpp to .o
 $(DEBDIR)/%.o : %.cpp
 	@echo .
 	@echo -- Step compile C++ -- 
-	@echo -- $< nach $@ --
+	@echo -- $< to $@ --
 	$(CCXX) -c $(CXXFLAGS) -mmcu=$(MCU) $(CXXDEFS) $(INCLUDE) $< -o $@
 
 # Compile: create object files from C source files.
 $(DEBDIR)/%.o : %.c
 	@echo .
 	@echo -- Step compile C -- 
-	@echo -- $< nach $@ --
+	@echo -- $< to $@ --
 	$(CC) -c $(CFLAGS) -mmcu=$(MCU) $(CDEFS) $(INCLUDE) $< -o $@
 	
 # Compile: create object files from S source files.
 $(DEBDIR)/%.o : %.S
 	@echo .
 	@echo -- Step compile S-file -- 
-	@echo -- $< nach $@ --
+	@echo -- $< to $@ --
 	$(CC) -c $(ASFLAGS) -mmcu=$(MCU) $(ADEFS) $(INCLUDE)$< -o $@ $(ASLST)
 	@echo .	
 
