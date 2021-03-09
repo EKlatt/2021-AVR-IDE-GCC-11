@@ -5,7 +5,7 @@ command="$(PNPath)..\toolchain\bin\make.exe"
 flags="41" 
 folder="%d" 
 index="0" 
-name="[MyIDE] make all" 
+name="[MyIDE] avr-gcc (make all)" 
 params="PNP=$(PNPath) --debug all" 
 parsepattern="" shortcut="116">
 </tool>
@@ -14,7 +14,7 @@ command="$(PNPath)..\toolchain\bin\make.exe"
 flags="41" 
 folder="%d" 
 index="0" 
-name="[MyIDE] make program" 
+name="[MyIDE] avrdude (make program)" 
 params="PNP=$(PNPath) program" 
 parsepattern="" shortcut="117">
 </tool>
@@ -28,13 +28,31 @@ params="PNP=$(PNPath) clean"
 parsepattern="" shortcut="118">
 </tool>
 <tool 
+command="$(PNPath)..\toolchain\bin\make.exe" 
+flags="41" 
+folder="%d" 
+index="0" 
+name="[MyIDE] AVR simulator" 
+params="PNP=$(PNPath) avrsim" 
+parsepattern="" shortcut="119">
+</tool>
+<tool 
+command="$(PNPath)..\toolchain\bin\make.exe" 
+flags="41" 
+folder="%d" 
+index="0" 
+name="[MyIDE] avrasm2" 
+params="PNP=$(PNPath) avr8" 
+parsepattern="" shortcut="120">
+</tool>
+<tool 
 command="$(PNPath)..\utils\ls.exe" 
 flags="41" 
 folder="%d" 
 index="0" 
-name="[MyIDE] ls" 
+name="[MyIDE] list files" 
 params="*.*"
-parsepattern="" shortcut="119">
+parsepattern="" shortcut="121">
 </tool>
 <tool 
 command="$(PNPath)..\utils\cp.exe" 
@@ -43,7 +61,7 @@ folder="%d"
 index="0" 
 name="[MyIDE] get makefile" 
 params="$(PNPath)../makefile/makefile.master ./makefile" 
-parsepattern="" shortcut="120">
+parsepattern="" shortcut="122">
 </tool>
 </global>
 </schemetools>
