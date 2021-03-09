@@ -1,0 +1,32 @@
+# The name of this file needs to be "makefile" in each of your source-code folders
+# This "makefile" will be called from "Programmer's Notepad like"
+	# "..\MyIDE\PNP\..\toolchain\bin\make.exe" PNP=C:\Users\Public\MyIDE\PNP\ clean
+# The options of make.exe are "PNP=..." with the path to "Programmer's Notepad" and e.g. option clean
+# This makefile needs to be copied into each project
+# This "makefile" includes the makefile "makefile.master" as default
+
+# ------- Edit the options according to your microcontroller and programmer --------------
+# Edit options of your microncontroller
+export MCU    = atmega328p
+export F_CPU  = 16000000
+
+# Edit options for your programmer
+export AVRDUDE_PROGRAMMER   = arduino
+export AVRDUDE_BAUD         = 115200
+export AVRDUDE_PORT         = com4
+
+# ---- Nothing to be changed below if you want default included makefile -----------------
+# The default location of "makefile.master" is within your IDE-path
+include $(PNP)../makefile/makefile.master
+
+# Do you want to use "makefile.master" directly within your source folder
+# You may copy "makefile.master" into your source folder
+# In this case comment out the next line
+# include makefile.master
+
+
+
+
+
+	
+	
