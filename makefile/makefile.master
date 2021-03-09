@@ -286,7 +286,7 @@ avrsim	:
 $(AVRASRC).avrasm2.hex : $(AVRASRC).asm
 	@echo .
 	@echo -- Step compile avrasm2 asm-file --
-	$(AVRASM2) -fI -I $(PNP)../avr8/inc -o $(TARGET).hex -l $(DEBDIR)/$(AVRASRC).lst -m $(DEBDIR)/$(AVRASRC).map -W+ie $(AVRASRC).asm	
+	$(AVRASM2) -fI -I $(PNP)../avrasm2/inc -o $(TARGET).hex -l $(DEBDIR)/$(AVRASRC).lst -m $(DEBDIR)/$(AVRASRC).map -W+ie $(AVRASRC).asm	
 
 program : $(TARGET).hex 
 	$(AVRDUDE) -C $(AVRDUDE).conf -v -p $(MCU)  -c $(AVRDUDE_PROGRAMMER) -P $(AVRDUDE_PORT) -b $(AVRDUDE_BAUD) -D $(AVRDUDE_WRITE_FLASH)
