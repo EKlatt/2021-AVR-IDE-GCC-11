@@ -113,8 +113,8 @@ SIZE      = $(BINARIES)/avr-size
 AR        = $(BINARIES)/avr-gcc-ar rcs
 NM        = $(BINARIES)/avr-nm
 AVRDUDE   = $(BINARIES)/avrdude
-AVRSIM	  = $(PNP)../avr_sim/avr_sim_debug.exe
-AVRASM2	  = $(PNP)../avrasm2/avrasm2.exe
+AVRSIM	  = $(PNP)../avr_sim/avr_sim
+AVRASM2	  = $(PNP)../avrasm2/avrasm2
 REMOVE    = rm -f
 REMOVEDIR = rm -rf		
 
