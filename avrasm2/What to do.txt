@@ -1,0 +1,9 @@
+This IDE runs within the Windows-Shell.
+The IDE-folder ..\MyIDE\avasm2 contains the AVR assembler "avrams2.exe" derived from:
+https://www.microchip.com/en-us/development-tools-tools-and-software/microchip-studio-for-avr-and-sam-devices
+So the AVR assembler can be called within the IDE
+
+1. Download: https://www.microchip.com/content/dam/mchp/documents/parked-documents/as-installer-7.0.2542-full.exe
+2. Install as-installer-7.0.2542-full.exe
+3. Look for "Your Path"\Atmel\Studio\7.0\toolchain\avr8\avrassembler\avrasm2.exe
+4. Copy avrasm2.exe to "your path"\MyIDE\avrasm2\avrasm2.exe
