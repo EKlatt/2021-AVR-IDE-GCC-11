@@ -55,7 +55,7 @@ void lcd_init( volatile uint8_t* _LCD_PORT_RS_EN, uint8_t _LCD_RS, uint8_t _LCD_
 
   
 
-  **Example<br>**
+  **Example<br>** 
 
   ------
 
