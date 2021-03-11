@@ -6,6 +6,4 @@
 @ECHO Install Atmal Studio 7.0
 @ECHO Look for "Your Path"\Atmel\Studio\7.0\toolchain\avr8\avrassembler\avrasm2.exe
 @ECHO Copy avrasm2.exe to "your path"\MyIDE\avrasm2\avrasm2.exe
-@ECHO ...
-@ECHO ...
 @ECHO --------------------------------------------------------------------------------
