@@ -1,9 +1,9 @@
 This IDE runs within the Windows-Shell.
-The IDE-folder ..\IDE\utils contains Unix-tools derived from:
+The IDE-folder ..\MyIDE\utils contains Unix-tools derived from:
 http://unxutils.sourceforge.net Karl M. Syring
 So UNIX-commands like ls.exe will be used inside make.exe.
 
 1. Download http://unxutils.sourceforge.net
 2. Unpack UnxUtils.zip
 3. Find the folder ..\UnxUtils\usr\local\wbin
-4. Copy wbin-files to ..\IDE\utils
+4. Copy wbin-files to ..\MyIDE\utils
