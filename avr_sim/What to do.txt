@@ -1,0 +1,8 @@
+This IDE runs within the Windows-Shell.
+The IDE-folder ..\MyIDE\avr_sim shall contain Gerd's AVR Simulator derived from:
+http://www.avr-asm-tutorial.net/avr_sim/index_de.html
+So the AVR simulator can be called within the IDE
+
+1. Download: http://www.avr-asm-tutorial.net/avr_sim/23/avr_sim_23_win64_debug.zip
+2. Unpack: avr_sim_23_win64_debug.zip
+3. Copy avr_sim.exe to ..\MyIDE\avr_sim
