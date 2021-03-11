@@ -5,7 +5,7 @@ I made some additions in UserTools.xml
 1. Download https://github.com/simonsteele/pn/releases/download/v2.4.2/portable-pn2421440.zip
 2. Unpack portable-pn2421440.zip
 3. Copy (only the contents) from "portable-pn2421440" to ..\IDE\PNP
-4. Locate ..\IDE\PNP\settings
+4. Locate ..\MyIDE\PNP\settings
 5. Delete the file "UserTools.xml" 
 5. Rename the file "UserTools.xml.new" to "UserTools.xml"
 
