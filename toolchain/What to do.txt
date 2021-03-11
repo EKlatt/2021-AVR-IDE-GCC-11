@@ -1,13 +1,13 @@
 I appreciate the work of Zak Kemble and his toolchain:
 https://blog.zakkemble.net/avr-gcc-builds/
-The contents is find in the folder ..\IDE\toolchain.
+The contents is find in the folder ..\MyIDE\toolchain.
 This great implementation contains e.g. avr-gcc.exe but alse make.exe,
 avrdude.com, avrdude.conf and all the libraries.
 
 1. Download https://blog.zakkemble.net/download/avr-gcc-10.1.0-x64-windows.zip
 2. Unpack avr-gcc-10.1.0-x64-windows.zip
 3. Find the folder ..\avr-gcc-10.1.0-x64-windows
-4. Copy (only the contents) from "avr-gcc-10.1.0-x64-windows" to ..\IDE\toolchain
+4. Copy (only the contents) from "avr-gcc-10.1.0-x64-windows" to ..\MyIDE\toolchain
 
 In consequence of this you get the following structure:
 
