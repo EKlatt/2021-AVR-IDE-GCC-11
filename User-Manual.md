@@ -47,7 +47,7 @@ Binutils	|	2.34
 AVR-LibC	|	SVN with extras
 GDB	|	9.2 (not currently supported)
 AVRDUDE	|	6.3
-Make	|	4.2.1<br>
+Make	| 4.2.1 
 
 I called the above tools "toolchain" located in folder "toolchain".<br>
 The advantage of "Zak Kemble's" edition is the presence of all<br>
@@ -56,17 +56,24 @@ needed tools like AVRDUDE and Make.<br>
 **Programmer's Notepad 2**<br>
 As Editor I choosed portable Programmer's Notepad.<br>
 I made some additions in UserTools.xml<br>
-These additions will be found in the Tools-Menue:<br>
+
+These additions will be found in the
+
+#####  Tools-Menue:
+
 Task	|	Command     |    Key
 ------------------|------------------ | ----
-compile and link	|	[MyIDE] make all | F5<br>
-flash	|	[MyIDE] make program | F6<br>
-clean	|	[MyIDE] make clean | F7<br>
-listing	|	[MyIDE] ls | F8<br>
-get makefile |	[MyIDE] get makefile | F9<br>
+C++ or C or avr-gcc assembler	|	[MyIDE] avr-gcc (make all) | F5 
+flash micro controller	|	[MyIDE] avrdude (make program) | F6 
+remove files and debug folder	|	[MyIDE] make clean | F7 
+Gerd's Simulator	|	[MyIDE] AVR Simulator | F8 
+AVR Assembler	|	[MyIDE] avrasm2 | F9 
+listing	|	[MyIDE] ls | F10 
+get makefile |	[MyIDE] get makefile | F11 
 
 Progammer's Notepad is located in folder "../MyIDE/PNP".<br>
 In order to get the above mentioned enhancements, you need to do:<br>
+
 1. Locate ..\MyIDE\PNP\settings
 2. Rename the file "UserTools.xml" to "UserTools.xml.old"
 3. Rename the file "UserTools.xml.new" to "UserTools.xml"<br>
@@ -90,14 +97,7 @@ In consequence of this the commands like "avr-gcc.exe" can be found from "make.e
 In this example the makefile is already present.<br>
 > Open makefile and edit AVRDUDE_PORT.<br>
 
-## Menue Tools:<br>
-> &gt; Tools > [MyIDE] avr-gcc (make all)                F5<br>
-> &gt; Tools > [MyIDE] avrdude (make program)  F6<br>
-> &gt; Tools > [MyIDE] make clean                           F7<br>
-> &gt;Tools > [MyIDE] AVR simulaor                        F8<br>
->  &gt; Tools > [MyIDE] avrasm2                                F9<br>
-> &gt; Tools > [MyIDE] list files                                  F10<br>
-> &gt; Tools > [MyIDE] get makefile                          F11<br>
+In order to trigger compile and link process press &lt; F5 &gt;
 
 ## New Project ##
 Suppose there exists a folder with a source file but no PN Project.<br>
