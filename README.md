@@ -13,6 +13,20 @@ the basics behind the scene (Arduino-IDE).
 The main goal is to develop **C++ programs** using the **AVR-toolchain**<br>
 from Zak Kemble.<br>
 You may write your source code also in C and Assembler (S-files).<br>
+
+## Understanding a micro controller
+The AVR assembler simulator by Gerhard Schmidt is included.<br>
+This software emulates e.g. ATmega micro controllers.<br>
+You may create assembler code, running the integrated assembler and simulate it.<br>
+So you really may understand what goes on within your micro controller.<br>
+
+## AVR assembler
+This assembler is included in "Atmel Studio 7.0". Filename "avrasm2.exe".<br>
+I included it in MyIDE if you want to develop in assembler.
+This is assembler is used within "Atmel Studio 7.0" for assembler source files "*.asm".<br>
+You need to distingish between AVR assembler and GCU-GCC assembler.<br>
+If you want to create assembler applications try AVR assembler.<br>
+
 ## Automatically detection of source:<br>
 The "makefile" automatically detects all types of source-files.<br>
 In fact more than one source-file will be detected.<br>
