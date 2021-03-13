@@ -7,6 +7,8 @@ the basic components like:<br>
 * AVR-GCC 10.1.0 for Windows 64 bit
 * Programmer's Notepad 2
 * GNU utilities for Win32.<br>
+* Gerd's AVR Simulator
+* AVR Assembler (avrasm2)
 
 No debugging tools are added.<br>
 ## Installation
@@ -18,143 +20,24 @@ This is done because Programmer's Notepad sends its installation-path to the mak
 Hence do not change the structure of MyIDE.<br>
 Below the MyIDE main folder needs to be the following subfolders: <br>
 
-<table width="530px" border="0" cellpadding="0" cellspacing="0"> 
-  <tr>
-  <td>MyIDE -- </td>
-  <td>+ --------</td>
-  <td>+ -------------</td>
-  <td>+ ----------------</td>
-  <td>+ -------------</td>
-  <td>+ -----------</td>
-  <td>+</td>
- </tr>
- <tr>
-  <td>&nbsp;</td>
-  <td>|</td>
-  <td>|</td>
-  <td>|</td>
-  <td>|</td>
-  <td>|</td>
-  <td>|</td>
- </tr>
- <tr>
-  <td>&nbsp;</td>
-  <td>archives</td>
-  <td>libraries</td>
-  <td>makefile</td>
-  <td>PNP</td>
-  <td>toolchain</td>
-  <td>utils</td>
- </tr>
- <tr>
-  <td>&nbsp;</td>
-  <td>|</td>
-  <td>|</td>
-  <td>|</td>
-  <td>|</td>
-  <td>|</td>
-  <td>|</td>
- </tr>
- <tr>
-  <td>&nbsp;</td>
-  <td>core.a</td>
-  <td>   + -- LCD</td>
-  <td>makefile.master</td>
-  <td>   + -- clips</td>
-  <td>   + -- avr</td>
-  <td>ls.exe</td>
- </tr>
-<tr>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>|</td>
-  <td>&nbsp;</td>
-  <td>|</td>
-  <td>|</td>
- </tr>
-  <tr>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>   + -- USART</td>
-  <td>&nbsp;</td>
-  <td>   + -- ctags</td>
-  <td>   + -- bin</td>
-  <td>&nbsp;</td>
- </tr>
- <tr>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>|</td>
-  <td>|</td>
-  <td>&nbsp;</td>
- </tr>
- <tr>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>   + -- presets</td>
-  <td>   + -- include</td>
-  <td>&nbsp;</td>
- </tr>
- <tr>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>|</td>
-  <td>|</td>
-  <td>&nbsp;</td>
- </tr>
- <tr>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>   + -- schemes</td>
-  <td>   + -- lib</td>
-  <td>&nbsp;</td>
- </tr>
- <tr>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>|</td>
-  <td>|</td>
-  <td>&nbsp;</td>
- </tr>
- <tr>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>   + -- settings</td>
-  <td>   + -- libexec</td>
-  <td>&nbsp;</td>
- </tr>
- <tr>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>|</td>
-  <td>|</td>
-  <td>&nbsp;</td>
- </tr>
- <tr>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-  <td>pn.exe</td>
-  <td>   + -- share</td>
-  <td>&nbsp;</td>
- </tr>
-</table><br>
-										  
+| MyIDE | +---------- | +-------------- | +----------------- | +------------- | +---------------------- | +---------------- | +-------------- | +      |
+| ----- | ----------- | --------------- | ------------------ | -------------- | ----------------------- | ----------------- | --------------- | ------ |
+|       | \|          | \|              | \|                 | \|             | \|                      | \|                | \|              | \|     |
+|       | archives    | avr_sim         | avrasim2           | libraries      | makefile                | PNP               | toolchain       | utils  |
+|       | \|          | \|              | \|                 | \|             | \|                      | \|                | \|              | \|     |
+|       | core.a      | avr_sim.exe     | + -- inc           | + -- LCD       | makefile.master         | + -- clips        | + -- avr        | ls.exe |
+|       |             |                 | \|                 | \|             |                         | \|                | \|              | ...    |
+|       |             |                 | avrasm2.exe        | + -- USART     |                         | + -- ctags        | + -- bin        |        |
+|       |             |                 |                    | \|             |                         | \|                | \|              |        |
+|       |             |                 |                    | + -- ADC       |                         | + -- presets      | + -- include    |        |
+|       |             |                 |                    |                |                         | \|                | \|              |        |
+|       |             |                 |                    |                |                         | + -- schemes      | + -- lib        |        |
+|       |             |                 |                    |                |                         | \|                | \|              |        |
+|       |             |                 |                    |                |                         | + -- settings     | + -- libexec    |        |
+|       |             |                 |                    |                |                         | \|                | \|              |        |
+|       |             |                 |                    |                |                         | pn.exe            | + -- share      |        |
+<br>
+
 ## Included tools
 **AVR-GCC 10.1.0** for Windows 64 bit (by Zak Kemble)<br>
 Tool	|	Version
@@ -208,11 +91,13 @@ In this example the makefile is already present.<br>
 > Open makefile and edit AVRDUDE_PORT.<br>
 
 ## Menue Tools:<br>
-> &gt; Tools > [MyIDE] make all     or F5<br>
-> &gt; Tools > [MyIDE] make program or F6<br>
-> &gt; Tools > [MyIDE] make clean   or F7<br>
-> &gt; Tools > [MyIDE] ls           or F8<br>
-> &gt; Tools > [MyIDE] get makefile or F9<br>
+> &gt; Tools > [MyIDE] avr-gcc (make all)                F5<br>
+> &gt; Tools > [MyIDE] avrdude (make program)  F6<br>
+> &gt; Tools > [MyIDE] make clean                           F7<br>
+> &gt;Tools > [MyIDE] AVR simulaor                        F8<br>
+>  &gt; Tools > [MyIDE] avrasm2                                F9<br>
+> &gt; Tools > [MyIDE] list files                                  F10<br>
+> &gt; Tools > [MyIDE] get makefile                          F11<br>
 
 ## New Project ##
 Suppose there exists a folder with a source file but no PN Project.<br>
@@ -261,11 +146,11 @@ My "makefile" is located in "../makefile/makefile.master".<br>
 I decided to develop a makefile which works like the build-process<br>
 of the Arduino-IDE. You only need to edit the PORT and new are ready to go.<br>
 
-> The type of source: C++, C or S-file (assembler) will be automatically<br>
+> The type of source: C++, C , S-file or asm-file (assembler) will be automatically<br>
 > detected and the related sources will be included in the building-process.<br>
 
-> Header files from the user-libraris and the associated<br> 
-> object-files will be scanned for automatically.<br> 
+> Header files from the user-libraris and the associated<br>
+> object-files will be scanned for automatically.<br>
 
 **Compiler and Linker options**<br>
 I decided to use the options from Arduino "platform.txt".<br>
