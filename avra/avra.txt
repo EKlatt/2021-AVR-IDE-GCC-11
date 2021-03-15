@@ -1,0 +1,25 @@
+AVRA: advanced AVR macro assembler (Release 1.4.2 (2020-07-18)
+usage: avra [-f][O|M|I|G] output file type
+            [-o <filename>] output file name
+            [-d <filename>] debug file name
+            [-e <filename>] file name to output EEPROM contents
+            [-l <filename>] generate list file
+            [-m <mapfile>] generate map file
+            [--define <symbol>[=<value>]]
+            [-I <dir>] [--listmac]
+            [--max_errors <number>] [--devices] [--version]
+            [-O e|w|i]
+            [-h] [--help] general help
+            <file to assemble>
+
+   --listfile    -l : Create list file
+   --mapfile     -m : Create map file
+   --define      -D : Define symbol.
+   --includedir  -I : Additional include paths. Default: .
+   --listmac        : List macro expansion in listfile.
+   --max_errors     : Maximum number of errors before exit
+                      (default: 10)
+   --devices        : List out supported devices.
+   --version        : Version information.
+   -O e|w|i         : Issue error/warning/ignore overlapping code.
+   --help, -h       : This help text.
