@@ -1,5 +1,5 @@
 <schemetools>
-<global>
+<global> 
 <tool 
 command="$(PNPath)..\toolchain\bin\make.exe" 
 flags="41" 
@@ -41,8 +41,8 @@ command="$(PNPath)..\toolchain\bin\make.exe"
 flags="41" 
 folder="%d" 
 index="0" 
-name="[MyIDE] avrasm2" 
-params="PNP=$(PNPath) avr8" 
+name="[MyIDE] avra" 
+params="PNP=$(PNPath) avra" 
 parsepattern="" shortcut="120">
 </tool>
 <tool 
