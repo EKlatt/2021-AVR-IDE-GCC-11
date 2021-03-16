@@ -1,0 +1,11 @@
+This IDE runs within the Windows-Shell.
+The IDE-folder ..\MyIDE\avra contains assembler "avra.exe" compiled from:
+https://github.com/Ro5bert/avra/archive/1.4.2.zip
+The new version of avra-assembler needs to be compiled first.
+See description in: 
+https://rclelectronics.blogspot.com/2014/12/avra-assembler-under-windows.html
+So the AVR assembler can be called within the IDE.
+
+1. Download: https://github.com/Ro5bert/avra/archive/1.4.2.zip
+2. Compile it with e.g. "Dev-C++"
+3. Copy avra.exe to "your path"\MyIDE\avra\avra.exe
