@@ -23,11 +23,11 @@ Below the MyIDE main folder needs to be the following subfolders: <br>
 | MyIDE | +---------- | +-------------- | +----------------- | +------------- | +---------------------- | +---------------- | +-------------- | +      |
 | ----- | ----------- | --------------- | ------------------ | -------------- | ----------------------- | ----------------- | --------------- | ------ |
 |       | \|          | \|              | \|                 | \|             | \|                      | \|                | \|              | \|     |
-|       | archives    | avr_sim         | avrasim2           | libraries      | makefile                | PNP               | toolchain       | utils  |
+|       | archives    | avr_sim         | avra               | libraries      | makefile                | PNP               | toolchain       | utils  |
 |       | \|          | \|              | \|                 | \|             | \|                      | \|                | \|              | \|     |
-|       | core.a      | avr_sim.exe     | + -- inc           | + -- LCD       | makefile.master         | + -- clips        | + -- avr        | ls.exe |
+|       | core.a      | avr_sim.exe     | + -- includes      | + -- LCD       | makefile.master         | + -- clips        | + -- avr        | ls.exe |
 |       |             |                 | \|                 | \|             |                         | \|                | \|              | ...    |
-|       |             |                 | avrasm2.exe        | + -- USART     |                         | + -- ctags        | + -- bin        |        |
+|       |             |                 | avra.exe           | + -- USART     |                         | + -- ctags        | + -- bin        |        |
 |       |             |                 |                    | \|             |                         | \|                | \|              |        |
 |       |             |                 |                    | + -- ADC       |                         | + -- presets      | + -- include    |        |
 |       |             |                 |                    |                |                         | \|                | \|              |        |
@@ -67,7 +67,7 @@ C++ or C or avr-gcc assembler	|	[MyIDE] avr-gcc (make all) | F5
 flash micro controller	|	[MyIDE] avrdude (make program) | F6 
 remove files and debug folder	|	[MyIDE] make clean | F7 
 Gerd's Simulator	|	[MyIDE] AVR Simulator | F8 
-AVR Assembler	|	[MyIDE] avrasm2 | F9 
+AVR Assembler AVRA	|	[MyIDE] avra | F9 
 listing	|	[MyIDE] ls | F10 
 get makefile |	[MyIDE] get makefile | F11 
 
