@@ -45,14 +45,14 @@ Rename it to e.g. MyIDE.<br>
 2. Unpack: avr_sim_23_win64_debug.zip
 3. Copy avr_sim.exe to ..\MyIDE\avr_sim<br><br>
 
-* Download and install Atmel Studio 7.0 in order to get avrasm2.exe
+* Download and compile AVRA source files in order to get avra.exe
 * In order to do this, follow these steps:<br>
-* Open the folder "avrasm2"
+* Open the folder "avra"
 * Read the explanations in file "What to do.txt"<br>
-1. Download: https://www.microchip.com/content/dam/mchp/documents/parked-documents/as-installer-7.0.2542-full.exe
-2. Install Atmel Studio 7.0
-3. Look for "Your Path"\Atmel\Studio\7.0\toolchain\avr8\avrassembler\avrasm2.exe
-4. Copy avrasm2.exe to "your path"\MyIDE\avrasm2\avrasm2.exe
+1. Download: https://github.com/Ro5bert/avra/archive/1.4.2.zip
+2. Compile instructions: https://rclelectronics.blogspot.com/2014/12/avra-assembler-under-windows.html
+3. Compile it with e.g. "Dev-C++" 
+4. Copy avra.exe to "your path"\MyIDE\avra\avra.exe
 
 <br>
 Have fun.
