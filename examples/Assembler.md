@@ -4,7 +4,7 @@ You may write code in Assembler.
 ### Assembler families
 
 - Assembler standalone (GNU AVR-GCC) 
-- Assembler standalone (AVR Assembler) 
+- Assembler standalone (AVR compatible Assembler avra) 
 - Inline Assembler
 - Mixing Assembler & C++ or C code
 
@@ -20,16 +20,16 @@ After precompiling, the assembler "avr-as.exe" is invoked automatically.<br>
 The source file needs to have the extension "**myFile.S**".<br>
 Therefore "**makefile**" expects the file extension capital '**S'**.<br>
 
-##### Assembler standalone (AVR Assembler)
-If you check out the assembler for 8 bit micro processors used in "Atmel Studio 7.0" you will <br>notice a assembler with the filename "avrasm2.exe".<br>
+##### Assembler standalone (AVR Assembler AVRA)
+If you check out the assemblers for 8 bit micro processors  you will <br>notice a assembler with the name "AVRA".<br>
 I decided to integrate this assembler in MyIDE. <br>
 The source file needs to have the extension **"myFile.asm"**.<br>
 Therefore "**makefile**" expects the file extension **"asm"**.
 
-> See: http://ww1.microchip.com/downloads/en/DeviceDoc/40001917A.pdf<br>
-> https://onlinedocs.microchip.com/pr/GUID-E06F3258-483F-4A7B-B1F8-69933E029363-en-US-2/index.html
+> See: [AVRA Home Page (sourceforge.net)](http://avra.sourceforge.net/)<br>
+> https://github.com/Ro5bert/avra/archive/1.4.2.zip
 
-##### Differences GNU AVR-GCC to AVR Assembler<br>
+##### Differences GNU AVR-GCC to AVR Assembler AVRA<br>
 Unfortunately, the syntax differs slightly between these two assemblers. And it turns out that the syntax differences are big <br>enough to make the conversion of existing source code a non-trivial task that tends to take way longer than expected.<br>
 > See: https://tenbaht.github.io/posts/migrating-from-avra-to-avr-as/<br>
 
@@ -80,13 +80,13 @@ I didn't check this way of coding with MyIDE.<br><br>
 
 
 
-| **AVR Assembler Language Syntax** | (AVRASM2)                                                    |
+| **AVR Assembler Language Syntax** | (AVRA)                                                       |
 | :-------------------------------- | ------------------------------------------------------------ |
 | #include "myfile.inc"             | Preprocessor including file (equivalent to .include)         |
 | .include "filename.asm"           | including means reading from another file                    |
 |                                   |                                                              |
 | ; my comment                      | comment starts with a colon ";"                              |
-| /* ... */    and //               | C-style comments are allowed (AVRASM2)                       |
+| /* ... */    and //               | C-style comments are not allowed (AVRA)                      |
 |                                   |                                                              |
 | .nolist .list                     | assembly listings are not generated or generated             |
 |                                   |                                                              |
