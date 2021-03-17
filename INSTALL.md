@@ -4,7 +4,7 @@
 After downloading "2020-AVR-Arduino-IDE-main.zip" unzip it.<br>
 Paste the downloaded folder where ether you want.<br>
 Rename it to e.g. MyIDE.<br>
-* Download and install the toolchain into folder "toolchain":
+* **Download and install the toolchain into folder "toolchain":**
 * In order to do this, follow these steps:<br>
 * Open the folder "toolchain"
 * Read the explanations in file "What to do.txt"<br>
@@ -13,7 +13,7 @@ Rename it to e.g. MyIDE.<br>
 3. Find the folder ..\avr-gcc-10.1.0-x64-windows
 4. Copy (only the contents) from "avr-gcc-10.1.0-x64-windows" to ..\MyIDE\toolchain<br><br>
 
-* Download and install Progammer's Notepad into folder "PNP":
+* **Download and install Progammer's Notepad into folder "PNP":**
 * In order to do this, follow these steps:<br>
 * Open the folder "PNP"
 * Read the explanations in file "What to do.txt"<br>
@@ -24,7 +24,7 @@ Rename it to e.g. MyIDE.<br>
 5. Delete the file "UserTools.xml" 
 5. Rename the file "UserTools.xml.new" to "UserTools.xml"<br><br>
 
-* Download and install the Unix tools into folder "utils":
+* **Download and install the Unix tools into folder "utils":**
 * In order to do this, follow these steps:<br>
 * Open the folder "utils"
 * Read the explanations in file "What to do.txt"<br>
@@ -36,7 +36,7 @@ Rename it to e.g. MyIDE.<br>
 
 4. Copy wbin-files to ..\MyIDE\utils<br><br>
 
-* Download and install Gerd's AVR Simulator
+* **Download and install Gerd's AVR Simulator**
 * In order to do this, follow these steps:<br>
 * Open the folder "avr_sim"
 * Read the explanations in file "What to do.txt"<br>
@@ -45,7 +45,7 @@ Rename it to e.g. MyIDE.<br>
 2. Unpack: avr_sim_23_win64_debug.zip
 3. Copy avr_sim.exe to ..\MyIDE\avr_sim<br><br>
 
-* Download and compile AVRA source files in order to get avra.exe
+* **Download and compile AVRA source files in order to get avra.exe**
 * In order to do this, follow these steps:<br>
 * Open the folder "avra"
 * Read the explanations in file "What to do.txt"<br>
