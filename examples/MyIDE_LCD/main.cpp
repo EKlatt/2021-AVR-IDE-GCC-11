@@ -8,6 +8,21 @@
 #include "LCD.h"					// include header for LCD functions
 #include "LCD_PRINT.h"				// include header for LCD print-functions
 
+// Breadport-connections
+// LCD Pin 1 GND       	<-->		GND
+// LCD Pin 2 VCC       	<-->		+5V  
+// LCD Pin 3 VO       	<-->		GND (contrast adjust)  
+// LCD Pin 4 RS       	<-->		PB0  
+// LCD Pin 5 R/W       	<-->		GND  
+// LCD Pin 6 E       	<-->		PB1  
+// LCD Pin 7-10 		not used  
+// LCD Pin 11 DB4       <-->		PC2  
+// LCD Pin 12 DB5       <-->		PC3
+// LCD Pin 13 DB6       <-->		PC4  
+// LCD Pin 14 DB7       <-->		PC5  
+// LCD Pin 15 LED(+)    <-->		+5V (220 Ohm resistor)
+// LCD Pin 16 LED(-)    <-->		GND     
+		
 int main() {
 	// initialize LCD with choosen hardware connections
 	// notice one port for RS and EN, and one port for data-connections
@@ -20,7 +35,7 @@ int main() {
 		// LCD DB4     <-->  PORTC Bit PC2
 		// LCD DB5     <-->  PORTC Bit PC3		
 		// LCD DB6     <-->  PORTC Bit PC4		
-		// LCD DB7     <-->  PORTC Bit PC5	
+		// LCD DB7     <-->  PORTC Bit PC5
 	
 	lcd_init( &PORTB, PB0, PB1, &PORTC, PC2, PC3, PC4, PC5);
 	
