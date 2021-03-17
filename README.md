@@ -1,11 +1,12 @@
 # MyIDE created from AVR-GCC 10.1.0 
-## (works similar to WINAVR)
 This is the beta version of MyIDE intended for advanced Arduino-IDE<br>
 users. MyIDE is not a replacement for WINAVR. It is just a new approach.<br>
 MyIDE consists of <br>
 * AVR-GCC 10.1.0 for Windows 64 bit
 * Programmer's Notepad 2
 * GNU utilities for Win32.<br>
+* Gerd's AVR simulator
+* AVRA 1.4.2 assembler
 
 MyIDE is intended for programmers who want to understand<br>
 the basics behind the scene (Arduino-IDE).
@@ -23,9 +24,9 @@ You may create assembler code, running the integrated assembler and simulate it.
 The source file needs to have the extension "asm".<br>
 
 ## AVR assembler AVRA
-AVRA is an assembler for Atmel AVR microcontrollers, and it is almost<br> compatible with Atmel's own assembler.<br>
+AVRA is an assembler by Burkhard Arenfeld (and others) for Atmel AVR microcontrollers, and it is almost<br> compatible with Atmel's own assembler.<br>
 I included it in MyIDE if you want to develop in assembler.
-You need to distingish between **AVR** assembler **AVRA** and **GCU-GCC** assembler.<br>
+You need to distingish between "**AVR** assembler **AVRA**" and **GCU-GCC** assembler.<br>
 If you want to create assembler applications try AVR assemble AVRA .<br>
 The source file needs to have the extension "asm".<br>
 
@@ -79,9 +80,15 @@ There are a view AVR assemblers like: avra, tavrasm, gavrasm, avrasm2 ...<br>
 - avrasm2: Microchip only offers the assembler together with there IDE's<br>
 
 I decided to use "AVRA".<br>
+
+Release 1.4.2 (2020-07-18, by Burkhard Arenfeld, Robert Russell, and others)<br>
+
 So you need to download "AVRA".<br>
 
 [AVRA Home Page (sourceforge.net)](http://avra.sourceforge.net/)
+
+[Ro5bert/avra: Assembler for the Atmel AVR microcontroller family (github.com)](https://github.com/Ro5bert/avra)
+
 https://github.com/Ro5bert/avra/archive/1.4.2.zip
 
 
