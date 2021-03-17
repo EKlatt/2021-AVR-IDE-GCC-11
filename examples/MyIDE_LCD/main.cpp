@@ -1,5 +1,5 @@
 // LCD 16x2 4 bit customized for ATmega328
-// reference see info.txt
+// reference see info.txt in ..\MyIDE\docs
 // this library works only with c++ because of overloading functions
 
 #include <avr/io.h>					// include AVR std. library file  
