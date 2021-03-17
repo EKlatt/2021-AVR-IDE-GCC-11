@@ -1,5 +1,12 @@
+##### Downloads
+
+[Download UnxUtils from SourceForge.net](https://sourceforge.net/projects/unxutils/files/latest/download)
+https://github.com/simonsteele/pn/releases/download/v2.4.2/portable-pn2421440.zip<br>
+https://blog.zakkemble.net/avr-gcc-builds/
+
 **Using the GNU Compiler Collection (GCC)**<br>
 https://gcc.gnu.org/onlinedocs/gcc/index.html#SEC_Contents<br>
+https://gcc.gnu.org/onlinedocs/gcc/Invoking-GCC.html#Invoking-GCC<br>
 https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html<br>
 
 **Options of avr-gcc project C and C++ compiler:**<br>
@@ -7,9 +14,10 @@ https://linux.die.net/man/1/avr-gcc<br>
 https://www.rapidtables.com/code/linux/gcc.html<br>
 https://rn-wissen.de/wiki/index.php/Avr-gcc<br>
 
+
 **GNU make**<br>
 https://www.gnu.org/software/make/<br>
-https://www.gnu.org/software/make/manual/html_node/index.html<br>
+https://www.gnu.org/software/make/manual/html_node/index.html<br>https://www.gnu.org/software/make/manual/html_node/index.html#SEC_Contents
 
 **Practical Makefiles, by example**<br>
 http://nuclear.mutantstargoat.com/articles/make/<br>
