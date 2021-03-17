@@ -8,7 +8,7 @@ the basic components like:<br>
 * Programmer's Notepad 2
 * GNU utilities for Win32.<br>
 * Gerd's AVR Simulator
-* AVR Assembler (avrasm2)
+* AVRA Assembler (avra.exe)
 
 No debugging tools are added.<br>
 ## Installation
@@ -67,7 +67,7 @@ C++ or C or avr-gcc assembler	|	[MyIDE] avr-gcc (make all) | F5
 flash micro controller	|	[MyIDE] avrdude (make program) | F6 
 remove files and debug folder	|	[MyIDE] make clean | F7 
 Gerd's Simulator	|	[MyIDE] AVR Simulator | F8 
-AVR Assembler AVRA	|	[MyIDE] avra | F9 
+AVRA Assembler	|	[MyIDE] avra | F9 
 listing	|	[MyIDE] ls | F10 
 get makefile |	[MyIDE] get makefile | F11 
 
