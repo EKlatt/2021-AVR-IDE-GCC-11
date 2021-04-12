@@ -46,7 +46,7 @@ The makefile will find all tools automatically.<br>
 This is done because Programmer's Notepad sends its directory-path to the makefile.<br>
 Hence do not change the structure of MyIDE.<br>
 Below the MyIDE main folder needs to be the following subfolders: <br>
-> archives, avr_sim, avrasm2, libraries, makefile, PNP, toolchain, utils<br>
+> archives, avr_sim, avra, libraries, makefile, PNP, toolchain, utils<br>
 
 ## Thanks to the developers<br>
 I appreciate the work of Zak Kemble and his toolchain:<br>
