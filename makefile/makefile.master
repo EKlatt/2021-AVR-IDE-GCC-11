@@ -1,5 +1,5 @@
 # This "makefile" named "makefile.master" is fundamental for MyIDE
-# Developped from Enno Klatt in 2021
+# Developped from Enno Klatt in 2021 (Revision 12.04.2021)
 
 # The target-file generates "myApp.hex"
 # Choose a name as you want!
@@ -96,7 +96,7 @@ CPPSRC = $(wildcard *.cpp)
 # Make them always end in  "S"
 ASRC = $(wildcard *.S) 
 
-# Automatically collect avrasm2-source file (only one asm-file)
+# Automatically collect avra-source file (only one asm-file)
 # Make them always end in "asm"
 AVRASRC = $(basename $(wildcard *.asm))
 
