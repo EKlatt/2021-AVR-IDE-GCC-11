@@ -1,5 +1,5 @@
 # This "makefile" named "makefile.master" is fundamental for MyIDE
-# Developped from Enno Klatt in 2021 (Revision 12.04.2021)
+# Developped from Enno Klatt in 2021 (Revision 19.05.2021)
 
 # The target-file generates "myApp.hex"
 # Choose a name as you want!
@@ -12,7 +12,7 @@ F_CPU  := 16000000
 # Flash options
 AVRDUDE_PROGRAMMER   := arduino
 AVRDUDE_BAUD         := 115200
-AVRDUDE_PORT         := com4
+AVRDUDE_PORT         := com3
 
 # Paths to toolchain and UnxUtils
 # PNP is the path to notepad++.exe given as a parameter of make.exe
@@ -105,7 +105,7 @@ AVRASRC = $(basename $(wildcard *.asm))
 # If nothing specified make takes build in Windows-commands
 # You need to use e.g. "ver" instead of "VER" (case sensitive)
 SHELL     = cmd.exe
-CC        = $(BINARIES)/avr-gcc-10.1.0
+CC        = $(BINARIES)/avr-gcc-11.1.0
 CCXX      = $(BINARIES)/avr-g++
 OBJCOPY   = $(BINARIES)/avr-objcopy
 OBJDUMP   = $(BINARIES)/avr-objdump
@@ -113,6 +113,7 @@ SIZE      = $(BINARIES)/avr-size
 AR        = $(BINARIES)/avr-gcc-ar rcs
 NM        = $(BINARIES)/avr-nm
 AVRDUDE   = $(BINARIES)/avrdude
+AVRDUDESS = $(PNP)../avrdudess/avrdudess
 AVRSIM	  = $(PNP)../avr_sim/avr_sim
 AVRA	  = $(PNP)../avra/avra
 REMOVE    = rm -f
@@ -290,7 +291,12 @@ $(AVRASRC).avra.hex : $(AVRASRC).asm
 
 program : $(TARGET).hex 
 	$(AVRDUDE) -C $(AVRDUDE).conf -v -p $(MCU)  -c $(AVRDUDE_PROGRAMMER) -P $(AVRDUDE_PORT) -b $(AVRDUDE_BAUD) -D $(AVRDUDE_WRITE_FLASH)
- 
+
+avrdudess :
+	@echo .
+	@echo -- GUI for avrdude --
+	$(AVRDUDESS)
+
 .PHONY: prints clean
 clean:
 	@echo Removing files and folders
