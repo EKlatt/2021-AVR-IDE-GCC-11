@@ -1,8 +1,8 @@
-# MyIDE created from AVR-GCC 10.1.0 
+# MyIDE created from AVR-GCC 11.1.0 
 This is the beta version of MyIDE intended for advanced Arduino-IDE<br>
 users. MyIDE is not a replacement for WINAVR. It is just a new approach.<br>
 MyIDE consists of <br>
-* AVR-GCC 10.1.0 for Windows 64 bit
+* AVR-GCC 11.1.0 for Windows 64 bit
 * Programmer's Notepad 2
 * GNU utilities for Win32.<br>
 * Gerd's AVR simulator
