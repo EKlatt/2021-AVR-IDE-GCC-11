@@ -1,1 +1,0 @@
-<Project name="MyIDE_BLINK_C"><MagicFolder excludeFiles="*.pnproj;*.pnps;*.bak;*.tmp" excludeFolders="CVS;.svn;.hg;.git" filter="*" name="MyIDE_Blink_C" path=""><File path="Example.cpp"></File><File path="makefile"></File></MagicFolder></Project>
