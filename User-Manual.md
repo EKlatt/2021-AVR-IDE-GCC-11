@@ -4,11 +4,12 @@ MyIDE is a development tool for advanced Arduino-IDE users.<br>
 MyIDE is intended for programmers who want to understand the basics<br>
 behind the scene (Arduino-IDE). Therefore MyIDE contains only<br>
 the basic components like:<br>
-* AVR-GCC 10.1.0 for Windows 64 bit
+* AVR-GCC 11.1.0 for Windows 64 bit
 * Programmer's Notepad 2
 * GNU utilities for Win32.<br>
 * Gerd's AVR Simulator
 * AVRA Assembler (avra.exe)
+* AVRDUDESS - A GUI for AVRDUDE
 
 No debugging tools are added.<br>
 ## Installation
@@ -20,34 +21,36 @@ This is done because Programmer's Notepad sends its installation-path to the mak
 Hence do not change the structure of MyIDE.<br>
 Below the MyIDE main folder needs to be the following subfolders: <br>
 
-| MyIDE | +---------- | +-------------- | +----------------- | +------------- | +---------------------- | +---------------- | +-------------- | +      |
-| ----- | ----------- | --------------- | ------------------ | -------------- | ----------------------- | ----------------- | --------------- | ------ |
-|       | \|          | \|              | \|                 | \|             | \|                      | \|                | \|              | \|     |
-|       | archives    | avr_sim         | avra               | libraries      | makefile                | PNP               | toolchain       | utils  |
-|       | \|          | \|              | \|                 | \|             | \|                      | \|                | \|              | \|     |
-|       | core.a      | avr_sim.exe     | + -- includes      | + -- LCD       | makefile.master         | + -- clips        | + -- avr        | ls.exe |
-|       |             |                 | \|                 | \|             |                         | \|                | \|              | ...    |
-|       |             |                 | avra.exe           | + -- USART     |                         | + -- ctags        | + -- bin        |        |
-|       |             |                 |                    | \|             |                         | \|                | \|              |        |
-|       |             |                 |                    | + -- ADC       |                         | + -- presets      | + -- include    |        |
-|       |             |                 |                    |                |                         | \|                | \|              |        |
-|       |             |                 |                    |                |                         | + -- schemes      | + -- lib        |        |
-|       |             |                 |                    |                |                         | \|                | \|              |        |
-|       |             |                 |                    |                |                         | + -- settings     | + -- libexec    |        |
-|       |             |                 |                    |                |                         | \|                | \|              |        |
-|       |             |                 |                    |                |                         | pn.exe            | + -- share      |        |
+| MyIDE       |                |               |                |                |                        |                   |                 |        |
+| ----------- | -------------- | ------------- | -------------- | -------------- | ---------------------- | ----------------- | --------------- | ------ |
+| +---------- | +------------- | +------------ | +------------- | +------------- | +--------------------- | +---------------- | +-------------- | +      |
+| \|          | \|             | \|            | \|             | \|             | \|                     | \|                | \|              | \|     |
+| archives    | avr_sim        | avra          | avrdudess      | libraries      | makefile               | PNP               | toolchain       | utils  |
+| \|          | \|             | \|            | \|             | \|             | \|                     | \|                | \|              | \|     |
+| core.a      | avr ... .exe   | + --includes  | avr ... .exe   | + -- LCD       | makefile.master        | + -- clips        | + -- avr        | ls.exe |
+|             |                | \|            |                | \|             |                        | \|                | \|              | ...    |
+|             |                | avra.exe      |                | + -- USART     |                        | + -- ctags        | + -- bin        |        |
+|             |                |               |                | \|             |                        | \|                | \|              |        |
+|             |                |               |                | + -- ADC       |                        | + -- presets      | + -- include    |        |
+|             |                |               |                |                |                        | \|                | \|              |        |
+|             |                |               |                |                |                        | + --schemes       | + -- lib        |        |
+|             |                |               |                |                |                        | \|                | \|              |        |
+|             |                |               |                |                |                        | + -- settings     | + -- libexec    |        |
+|             |                |               |                |                |                        | \|                | \|              |        |
+|             |                |               |                |                |                        | pn.exe            | + -- share      |        |
 <br>
 
 ## Included tools
-**AVR-GCC 10.1.0** for Windows 64 bit (by Zak Kemble)<br>
+**AVR-GCC 11.1.0** for Windows 64 bit (by Zak Kemble)<br>
+
 Tool	|	Version
 ----------|----------
-GCC	|	10.1.0
-Binutils	|	2.34
+GCC	| 11.1.0 x64 
+Binutils	| 2.36.1 x64 
 AVR-LibC	|	SVN with extras
-GDB	|	9.2 (not currently supported)
-AVRDUDE	|	6.3
-Make	| 4.2.1 
+GDB	| 10.2 (not currently supported) x64 
+AVRDUDE	| 6.3 x86 
+Make	| 4.2.1 x64 
 
 I called the above tools "toolchain" located in folder "toolchain".<br>
 The advantage of "Zak Kemble's" edition is the presence of all<br>
@@ -65,11 +68,12 @@ Task	|	Command     |    Key
 ------------------|------------------ | ----
 C++ or C or avr-gcc assembler	|	[MyIDE] avr-gcc (make all) | F5 
 flash micro controller	|	[MyIDE] avrdude (make program) | F6 
-remove files and debug folder	|	[MyIDE] make clean | F7 
-Gerd's Simulator	|	[MyIDE] AVR Simulator | F8 
-AVRA Assembler	|	[MyIDE] avra | F9 
-listing	|	[MyIDE] ls | F10 
-get makefile |	[MyIDE] get makefile | F11 
+edit parameters of avrdude (only within avrdudess)	|	[MyIDE] avrdudess GUI | F7 
+remove files and debug folder	|	[MyIDE] make clean | F8 
+Gerd's Simulator	|	[MyIDE] AVR Simulator | F9 
+AVRA Assembler	|	[MyIDE] avra | F10 
+listing	|	[MyIDE] ls | F11 
+get makefile from makefile.master |	[MyIDE] get makefile | F12 
 
 Progammer's Notepad is located in folder "../MyIDE/PNP".<br>
 In order to get the above mentioned enhancements, you need to do:<br>
@@ -102,7 +106,8 @@ In order to trigger compile and link process press &lt; F5 &gt;
 ## New Project ##
 Suppose there exists a folder with a source file but no PN Project.<br>
 **Create a Project: <br>**
-> \> File > New > Project; Name it MyIDE_Blink_C.<br>
+
+> \> File > New > Project; Name it MyIDE_Blink_CPP.<br>
 > As "Folder" move to your location of "..\examples\MyIDE_Blink_CPP" and open it.<br>
 > Press ALT+F6 to open Projects and Rightclick on "MyIDE_Blink_CPP" and chose "Add Magic Folder...".<br>
 > Look for "..\examples\MyIDE_Blink_CPP" and choose it. Accept the following options.<br>
@@ -145,7 +150,7 @@ My "makefile" is located in "../makefile/makefile.master".<br>
 
 **Extensions**<br>
 I decided to develop a makefile which works like the build-process<br>
-of the Arduino-IDE. You only need to edit the PORT and new are ready to go.<br>
+of the Arduino-IDE. You only need to edit the PORT and you are ready to go.<br>
 
 > The type of source: C++, C , S-file or asm-file (assembler) will be automatically<br>
 > detected and the related sources will be included in the building-process.<br>
@@ -253,7 +258,7 @@ scannded for automatically.<br>
 At the beginning of the build-process a **archive-file** named "core.a",<br>
 which contains all object-files of the added libraries will be created.<br>
 The archive-file is located in "../MyIDE/archives".<br>
-The linker scannes "core.a" in order to find the functions reffered to<br>
+The linker scannes "core.a" in order to find the functions refered to<br>
 in the header file.<br>
 > If you "clean" the files of the build process "core.a" will be deleted.<br>
 
