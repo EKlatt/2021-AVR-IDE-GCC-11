@@ -23,9 +23,18 @@ command="$(PNPath)..\toolchain\bin\make.exe"
 flags="41" 
 folder="%d" 
 index="0" 
+name="[MyIDE] avrdudess GUI" 
+params="PNP=$(PNPath) avrdudess" 
+parsepattern="" shortcut="118">
+</tool>
+<tool 
+command="$(PNPath)..\toolchain\bin\make.exe" 
+flags="41" 
+folder="%d" 
+index="0" 
 name="[MyIDE] make clean" 
 params="PNP=$(PNPath) clean" 
-parsepattern="" shortcut="118">
+parsepattern="" shortcut="119">
 </tool>
 <tool 
 command="$(PNPath)..\toolchain\bin\make.exe" 
@@ -34,7 +43,7 @@ folder="%d"
 index="0" 
 name="[MyIDE] AVR simulator" 
 params="PNP=$(PNPath) avrsim" 
-parsepattern="" shortcut="119">
+parsepattern="" shortcut="120">
 </tool>
 <tool 
 command="$(PNPath)..\toolchain\bin\make.exe" 
@@ -43,7 +52,7 @@ folder="%d"
 index="0" 
 name="[MyIDE] avra" 
 params="PNP=$(PNPath) avra" 
-parsepattern="" shortcut="120">
+parsepattern="" shortcut="121">
 </tool>
 <tool 
 command="$(PNPath)..\utils\ls.exe" 
@@ -52,7 +61,7 @@ folder="%d"
 index="0" 
 name="[MyIDE] list files" 
 params="*.*"
-parsepattern="" shortcut="121">
+parsepattern="" shortcut="122">
 </tool>
 <tool 
 command="$(PNPath)..\utils\cp.exe" 
@@ -61,7 +70,7 @@ folder="%d"
 index="0" 
 name="[MyIDE] get makefile" 
 params="$(PNPath)../makefile/makefile.master ./makefile" 
-parsepattern="" shortcut="122">
+parsepattern="" shortcut="123">
 </tool>
 </global>
 </schemetools>
