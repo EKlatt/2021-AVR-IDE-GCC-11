@@ -1,17 +1,17 @@
 ## Installation of MyIDE:<br>
 * You may download the ready to use Beta-release. 
 * Or creating your own version. Follow the instructions below.<br>
-After downloading "2020-AVR-Arduino-IDE-main.zip" unzip it.<br>
+After downloading "the current_release.zip" unzip it.<br>
 Paste the downloaded folder where ether you want.<br>
 Rename it to e.g. MyIDE.<br>
 * **Download and install the toolchain into folder "toolchain":**
 * In order to do this, follow these steps:<br>
 * Open the folder "toolchain"
 * Read the explanations in file "What to do.txt"<br>
-1. Download https://blog.zakkemble.net/download/avr-gcc-10.1.0-x64-windows.zip
-2. Unpack avr-gcc-10.1.0-x64-windows.zip
-3. Find the folder ..\avr-gcc-10.1.0-x64-windows
-4. Copy (only the contents) from "avr-gcc-10.1.0-x64-windows" to ..\MyIDE\toolchain<br><br>
+1. Download https://blog.zakkemble.net/download/avr-gcc-11.1.0-x64-windows.zip
+2. Unpack avr-gcc-11.1.0-x64-windows.zip
+3. Find the folder ..\avr-gcc-11.1.0-x64-windows
+4. Copy (only the contents) from "avr-gcc-11.1.0-x64-windows" to ..\MyIDE\toolchain<br><br>
 
 * **Download and install Progammer's Notepad into folder "PNP":**
 * In order to do this, follow these steps:<br>
@@ -55,5 +55,18 @@ Rename it to e.g. MyIDE.<br>
 4. Copy avra.exe to "your path"\MyIDE\avra\avra.exe
 
 <br>
+
+* **Download and install Zak Kemble's GUI for avrdude**
+* In order to do this, follow these steps:<br>
+* Open the folder "avrdudess"
+* Read the explanations in file "What to do.txt"<br>
+
+1. Download: Download: https://blog.zakkemble.net/download/AVRDUDESS-2.13-portable.zip
+2. Unpack: AVRDUDESS-2.13-portable.zip
+3. Find the folder  "AVRDUDESS-2.13-portable"
+4. Copy (only the contents) from "AVRDUDESS-2.13-portable" to ..\MyIDE\avrdudess<br>
+
+<br>
+
 Have fun.
 
