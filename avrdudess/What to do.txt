@@ -1,0 +1,8 @@
+This IDE runs within the Windows-Shell.
+The IDE-folder ..\MyIDE\avrdudess contains a "gui" for avrdude "avrdudess.exe" derived from:
+https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/
+so the avrdude gui can be called within the IDE.
+
+1. Download: https://blog.zakkemble.net/download/AVRDUDESS-2.13-portable.zip
+2. Unpack: AVRDUDESS-2.13-portable.zip
+3. Copy files in AVRDUDESS-2.13-portable to ..\MyIDE\avrdudess
