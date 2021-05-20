@@ -7,6 +7,7 @@ MyIDE consists of <br>
 * GNU utilities for Win32.<br>
 * Gerd's AVR simulator
 * AVRA 1.4.2 assembler
+* AVRDUDESS - A GUI for AVRDUDE
 
 MyIDE is intended for programmers who want to understand<br>
 the basics behind the scene (Arduino-IDE).
@@ -55,6 +56,11 @@ The contents will be find in the folder "..\MyIDE\toolchain".<br>
 This great implementation contains e.g. avr-gcc.exe but alse make.exe,<br>
 avrdude.com, avrdude.conf and all the libraries.<br>
 <br>
+
+Zak Kemble also developed a GUI for avrdude called avrdudess.. <br>
+https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/<br>
+The contents will be found in the folder "..\MyIDE\avrdudess".<br>
+
 This MyIDE runs within the Windows-Shell.<br>
 The MyIDE-folder "..\MyIDE\utils" contains Unix-tools derived from:<br>
 http://unxutils.sourceforge.net Karl M. Syring<br>
